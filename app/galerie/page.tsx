@@ -86,7 +86,7 @@ export default function GaleriePage() {
   }, [lightboxIndex, goNext, goPrev])
 
   return (
-    <div className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <div className="min-h-screen bg-warm-50 pt-44 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Impressionen</p>
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl">Unsere Bildergalerie</h1>
@@ -96,62 +96,61 @@ export default function GaleriePage() {
         <p className="mt-2 font-serif text-base text-warm-800/50">{allImages.length} Bilder</p>
       </FadeIn>
 
-      {/* Gaestehaus Section */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      {/* Gästehaus Section */}
+      <div id="gaestehaus" className="mx-auto max-w-6xl scroll-mt-48 px-4 sm:px-6">
         <FadeIn className="mb-8">
           <h2 className="font-serif text-2xl font-bold text-warm-900 sm:text-3xl">Gästehaus Schmid</h2>
           <p className="mt-2 font-serif text-lg text-warm-800/70">Unser Haus und die Räumlichkeiten.</p>
         </FadeIn>
 
-        <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {GALLERY_IMAGES.gaestehaus.map((img, index) => (
-            <div key={img.src} className="mb-3 break-inside-avoid">
-              <FadeIn delay={(index % 6) * 0.05}>
-                <button
-                  onClick={() => { setIsLoading(true); setLightboxIndex(index) }}
-                  className="group w-full overflow-hidden rounded-2xl shadow-md"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={600}
-                    height={400}
-                    className="w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                </button>
-              </FadeIn>
-            </div>
+            <FadeIn key={img.src} delay={(index % 8) * 0.05}>
+              <button
+                onClick={() => { setIsLoading(true); setLightboxIndex(index) }}
+                className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+              </button>
+            </FadeIn>
           ))}
         </div>
 
         {/* Umgebung Section */}
+        <div id="umgebung" className="scroll-mt-48" />
         <FadeIn className="mb-8 mt-16">
           <h2 className="font-serif text-2xl font-bold text-warm-900 sm:text-3xl">Umgebung & Natur</h2>
           <p className="mt-2 font-serif text-lg text-warm-800/70">Die traumhafte Allgäuer Landschaft rund um Obermaiselstein.</p>
         </FadeIn>
 
-        <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {GALLERY_IMAGES.umgebung.map((img, index) => {
             const globalIndex = GALLERY_IMAGES.gaestehaus.length + index
             return (
-              <div key={img.src} className="mb-3 break-inside-avoid">
-                <FadeIn delay={(index % 6) * 0.05}>
-                  <button
-                    onClick={() => { setIsLoading(true); setLightboxIndex(globalIndex) }}
-                    className="group w-full overflow-hidden rounded-2xl shadow-md"
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={600}
-                      height={400}
-                      className="w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    />
-                  </button>
-                </FadeIn>
-              </div>
+              <FadeIn key={img.src} delay={(index % 8) * 0.05}>
+                <button
+                  onClick={() => { setIsLoading(true); setLightboxIndex(globalIndex) }}
+                  className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    quality={90}
+                  />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+                </button>
+              </FadeIn>
             )
           })}
         </div>
@@ -213,12 +212,9 @@ export default function GaleriePage() {
             />
           </div>
 
-          {/* Caption + Counter */}
-          <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 text-center sm:bottom-6">
-            <p className="font-serif text-base font-semibold text-white/80 sm:text-lg">
-              {allImages[lightboxIndex].alt}
-            </p>
-            <p className="mt-1 font-serif text-sm text-white/40">
+          {/* Counter */}
+          <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-xl bg-black/70 px-5 py-2 text-center backdrop-blur-sm sm:bottom-6">
+            <p className="font-serif text-sm font-semibold text-white/70">
               {lightboxIndex + 1} / {allImages.length}
             </p>
           </div>

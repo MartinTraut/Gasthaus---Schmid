@@ -89,7 +89,7 @@ export default function HikingDetail({ slug }: { slug: string }) {
 
   if (!tip) {
     return (
-      <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+      <main className="min-h-screen bg-warm-50 pt-44 pb-20">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h1 className="font-serif text-3xl text-warm-900">Wanderziel nicht gefunden</h1>
           <Link href="/urlaubstipps" className="mt-4 inline-block font-serif text-lg text-alpine-700 underline">
@@ -104,7 +104,7 @@ export default function HikingDetail({ slug }: { slug: string }) {
 
   return (
     <main className="min-h-screen bg-warm-50">
-      <div className="pt-36 pb-16">
+      <div className="pt-44 pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <Link href="/urlaubstipps" className="mb-6 inline-flex items-center gap-2 font-serif text-lg font-semibold text-alpine-700 hover:text-alpine-800">
             <ArrowLeft className="h-5 w-5" />
@@ -149,6 +149,7 @@ export default function HikingDetail({ slug }: { slug: string }) {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 50vw, 50vw"
+                      quality={90}
                     />
                     <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
                   </button>
@@ -250,11 +251,8 @@ export default function HikingDetail({ slug }: { slug: string }) {
             />
           </div>
 
-          <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 text-center sm:bottom-6">
-            <p className="font-serif text-base font-semibold text-white/80 sm:text-lg">
-              {tip.name} – Bild {lightboxIndex + 1}
-            </p>
-            <p className="mt-1 font-serif text-sm text-white/40">
+          <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-xl bg-black/70 px-5 py-2 text-center backdrop-blur-sm sm:bottom-6">
+            <p className="font-serif text-sm font-semibold text-white/70">
               {lightboxIndex + 1} / {tip.images.length}
             </p>
           </div>

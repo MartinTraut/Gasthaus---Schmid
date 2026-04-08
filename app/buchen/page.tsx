@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { ROOMS } from "@/lib/data"
 import { Send, CalendarDays } from "lucide-react"
@@ -85,7 +85,7 @@ function BuchenForm() {
     "w-full rounded-xl border border-warm-200 bg-white px-4 py-3 font-serif text-base text-warm-900 placeholder:text-warm-800/40 focus:border-alpine-600 focus:outline-none focus:ring-2 focus:ring-alpine-600/20 transition-colors sm:text-lg"
 
   return (
-    <div className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <div className="min-h-screen bg-warm-50 pt-44 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-3xl px-4 text-center sm:px-6">
         <div className="mb-4 flex justify-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-alpine-100 text-alpine-700">
@@ -313,6 +313,8 @@ function BuchenForm() {
 
 export default function BuchenPage() {
   return (
-    <BuchenForm />
+    <Suspense fallback={<div className="min-h-screen bg-warm-50 pt-44" />}>
+      <BuchenForm />
+    </Suspense>
   )
 }

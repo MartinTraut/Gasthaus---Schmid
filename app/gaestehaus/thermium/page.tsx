@@ -24,7 +24,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function ThermiumPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Link href="/gaestehaus" className="mb-6 inline-flex items-center gap-2 font-serif text-lg text-alpine-700 hover:text-alpine-800">
           <ArrowLeft className="h-5 w-5" />
@@ -50,6 +50,7 @@ export default function ThermiumPage() {
               height={500}
               className="h-auto w-full object-cover"
               sizes="100vw"
+              quality={90}
             />
           </div>
         </FadeIn>

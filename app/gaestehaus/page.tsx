@@ -23,7 +23,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const highlights = [
-  { icon: Coffee, title: "Frühstücksbuffet", text: "Reichhaltiges Buffet mit regionalen Produkten – täglich frisch für Sie zubereitet." },
+  { icon: Coffee, title: "Frühstücksbuffet", text: "Reichhaltiges Buffet mit regionalen Produkten, täglich frisch für Sie zubereitet." },
   { icon: Sparkles, title: "Thermium Wellness", text: "Kleine Wellnessanlage mit Dampfsauna und Infrarotwärmekabine zur Erholung." },
   { icon: Droplets, title: "Grander Wasser", text: "Belebtes Wasser nach der Grander-Technologie für Ihr Wohlbefinden." },
   { icon: Award, title: "Ausgezeichnete Qualität", text: "Persönlicher Service und liebevolle Ausstattung für Ihren perfekten Urlaub." },
@@ -31,7 +31,7 @@ const highlights = [
 
 export default function GaestehausPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       {/* Header */}
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Nicht daheim und doch zu Hause</p>
@@ -39,7 +39,7 @@ export default function GaestehausPage() {
           Gästehaus Schmid
         </h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
-          Urlaub mit Herz in Obermaiselstein im Allgäu – gemütlich, freundlich, familiär.
+          Urlaub mit Herz in Obermaiselstein im Allgäu. Gemütlich, freundlich, familiär.
         </p>
       </FadeIn>
 
@@ -55,6 +55,7 @@ export default function GaestehausPage() {
                 height={340}
                 className="h-auto w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
               />
             </div>
             <div>
@@ -98,7 +99,7 @@ export default function GaestehausPage() {
           ))}
         </div>
 
-        {/* Fruehstueck Section */}
+        {/* Frühstück Section */}
         <FadeIn>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
@@ -113,7 +114,7 @@ export default function GaestehausPage() {
               </p>
               <p className="font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
                 Von frischem Gebäck über hausgemachte Marmeladen bis hin
-                zu regionaler Wurst und Käse – wir verwenden Produkte
+                zu regionaler Wurst und Käse. Dabei verwenden wir Produkte
                 von Erzeugern aus der Region.
               </p>
             </div>
@@ -125,6 +126,7 @@ export default function GaestehausPage() {
                 height={450}
                 className="h-auto w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
               />
             </div>
           </div>

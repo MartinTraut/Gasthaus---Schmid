@@ -58,7 +58,7 @@ const stats = [
 const usps = [
   { icon: Coffee, text: "Reichhaltiges Frühstücksbuffet mit regionalen Produkten" },
   { icon: Sparkles, text: "Thermium: Dampfsauna & Infrarotwärmekabine" },
-  { icon: BusFront, text: "Bushaltestelle in 2 Min. – öffentl. Verkehr größtenteils kostenlos" },
+  { icon: BusFront, text: "Bushaltestelle in 2 Min. mit größtenteils kostenlosem Nahverkehr" },
   { icon: Users, text: "Familiär, herzlich und persönlich" },
 ]
 
@@ -100,6 +100,7 @@ export default function HomePage() {
               fill
               className="object-cover"
               sizes="100vw"
+              quality={90}
               priority={index === 0}
             />
           </div>
@@ -129,7 +130,7 @@ export default function HomePage() {
             style={{ textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
           >
             Nicht daheim und doch{" "}
-            <span className="accent-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+            <span className="accent-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-alpine-200">
               zu Hause
             </span>
           </h1>
@@ -138,7 +139,7 @@ export default function HomePage() {
             className="mb-10 max-w-2xl font-serif text-lg leading-relaxed text-white sm:text-xl animate-fade-in-up"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.9s" }}
           >
-            Gemütlich, herzlich, familiär – lassen Sie den Alltag hinter sich
+            Lassen Sie in gemütlicher, herzlicher Atmosphäre den Alltag hinter sich
             und genießen Sie erholsame Tage im wunderschönen Allgäu.
           </p>
 
@@ -155,7 +156,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/kontakt"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-alpine-700 px-6 py-3.5 font-serif text-base font-semibold text-white shadow-md sm:px-10 sm:py-4 sm:text-lg"
+              className="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-alpine-700 px-6 py-3.5 font-serif text-base font-semibold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg sm:px-10 sm:py-4 sm:text-lg"
             >
               Anfrage senden
             </Link>
@@ -164,16 +165,16 @@ export default function HomePage() {
       </section>
 
       {/* Scroll-Pfeil */}
-      <div className="relative z-10 -mt-6 flex justify-center">
+      <div className="relative z-10 -mt-20 flex justify-center pb-6">
         <a
           href="#ueber-uns"
-          className="flex flex-col items-center gap-1 rounded-full bg-white px-6 py-3 shadow-lg animate-fade-in-up"
+          className="group flex flex-col items-center gap-1 animate-fade-in-up"
           style={{ animationDelay: "1.5s" }}
         >
-          <span className="font-serif text-sm font-semibold tracking-wider text-alpine-700">
+          <span className="font-serif text-sm font-semibold tracking-widest uppercase text-white/80 transition-colors duration-300 group-hover:text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
             Mehr entdecken
           </span>
-          <ChevronDown className="h-5 w-5 text-alpine-700 animate-pulse-arrow" />
+          <ChevronDown className="h-6 w-6 text-white/80 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
         </a>
       </div>
 
@@ -182,7 +183,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeInSection>
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <div className="img-zoom relative overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://storage.tramino.net/gaestehaus-schmid-20252/993331/1200.jpg?r=1"
                   alt="Gästehaus Schmid im Allgäu"
@@ -190,6 +191,7 @@ export default function HomePage() {
                   height={450}
                   className="h-auto w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
                 />
               </div>
             </FadeInSection>
@@ -215,7 +217,7 @@ export default function HomePage() {
                 <p className="mb-8 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
                   Genießen Sie den Panoramablick auf die Allgäuer Berge,
                   die Ruhe der Natur und zeitgemäßen Komfort. Ob als Familie,
-                  Paar oder allein – bei uns finden Sie Ihren persönlichen
+                  Paar oder allein, bei uns finden Sie Ihren persönlichen
                   Rückzugsort.
                 </p>
               </FadeInSection>
@@ -231,7 +233,7 @@ export default function HomePage() {
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="rounded-xl bg-white p-4 text-center shadow-sm sm:p-6"
+                      className="hover-glow rounded-xl bg-white p-4 text-center shadow-sm sm:p-6"
                     >
                       <stat.icon className="mx-auto mb-2 h-6 w-6 text-alpine-700 sm:h-7 sm:w-7" />
                       <p className="font-serif text-xl font-bold text-warm-900 sm:text-2xl">
@@ -250,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* USPs / Vorteile Section */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeInSection className="mb-10 text-center">
             <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">
@@ -264,8 +266,8 @@ export default function HomePage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {usps.map((usp, index) => (
               <FadeInSection key={usp.text} delay={index * 0.1}>
-                <div className="flex flex-col items-center rounded-2xl bg-warm-50 p-6 text-center shadow-sm sm:p-8">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-alpine-100 text-alpine-700">
+                <div className="hover-lift flex h-full flex-col items-center rounded-2xl bg-warm-50 p-6 text-center shadow-sm sm:p-8">
+                  <div className="icon-hover mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-alpine-100 text-alpine-700">
                     <usp.icon className="h-7 w-7" />
                   </div>
                   <p className="font-serif text-base font-semibold leading-relaxed text-warm-900 sm:text-lg">
@@ -303,7 +305,7 @@ export default function HomePage() {
               </FadeInSection>
             </div>
             <FadeInSection delay={0.15} className="order-1 lg:order-2">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <div className="img-zoom relative overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://storage.tramino.net/gaestehaus-schmid-20252/987421/1200.jpg"
                   alt="Frühstücksraum im Gästehaus Schmid"
@@ -311,6 +313,7 @@ export default function HomePage() {
                   height={450}
                   className="h-auto w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
                 />
               </div>
             </FadeInSection>
@@ -340,7 +343,7 @@ export default function HomePage() {
               <FadeInSection key={room.slug} delay={index * 0.1}>
                 <Link
                   href={`/zimmer/${room.slug}`}
-                  className="group block overflow-hidden rounded-2xl bg-warm-50 shadow-sm transition-all duration-300 hover:shadow-lg"
+                  className="group block overflow-hidden rounded-2xl bg-warm-50 shadow-sm hover-lift"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -349,6 +352,7 @@ export default function HomePage() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
@@ -377,7 +381,7 @@ export default function HomePage() {
           <FadeInSection delay={0.4} className="mt-12 text-center">
             <Link
               href="/zimmer"
-              className="inline-flex items-center gap-2 rounded-lg bg-alpine-700 px-8 py-3.5 font-serif text-lg font-semibold text-white shadow-md transition-all hover:bg-alpine-800 hover:shadow-lg"
+              className="btn-shine inline-flex items-center gap-2 rounded-lg bg-alpine-700 px-8 py-3.5 font-serif text-lg font-semibold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg"
             >
               Alle Zimmer ansehen
               <ArrowRight className="h-5 w-5" />
@@ -407,9 +411,9 @@ export default function HomePage() {
             <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
               <a
                 href="tel:+4983267165"
-                className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md sm:p-8"
+                className="hover-glow flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8"
               >
-                <Phone className="mb-3 h-7 w-7 text-alpine-700" />
+                <Phone className="icon-hover mb-3 h-7 w-7 text-alpine-700" />
                 <p className="mb-1 font-serif text-lg font-semibold text-warm-900">
                   Telefon
                 </p>
@@ -420,9 +424,9 @@ export default function HomePage() {
 
               <a
                 href="mailto:post@gaestehaus-schmid.info"
-                className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md sm:p-8"
+                className="hover-glow flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8"
               >
-                <Mail className="mb-3 h-7 w-7 text-alpine-700" />
+                <Mail className="icon-hover mb-3 h-7 w-7 text-alpine-700" />
                 <p className="mb-1 font-serif text-lg font-semibold text-warm-900">
                   E-Mail
                 </p>
@@ -431,8 +435,8 @@ export default function HomePage() {
                 </p>
               </a>
 
-              <div className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8">
-                <MapPin className="mb-3 h-7 w-7 text-alpine-700" />
+              <div className="hover-glow flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8">
+                <MapPin className="icon-hover mb-3 h-7 w-7 text-alpine-700" />
                 <p className="mb-1 font-serif text-lg font-semibold text-warm-900">
                   Adresse
                 </p>
@@ -448,7 +452,7 @@ export default function HomePage() {
           <FadeInSection delay={0.35} className="mt-12 text-center">
             <Link
               href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-lg bg-alpine-700 px-8 py-3.5 font-serif text-lg font-semibold text-white shadow-md transition-all hover:bg-alpine-800 hover:shadow-lg"
+              className="btn-shine inline-flex items-center gap-2 rounded-lg bg-alpine-700 px-8 py-3.5 font-serif text-lg font-semibold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg"
             >
               Anfrage senden
               <ArrowRight className="h-5 w-5" />

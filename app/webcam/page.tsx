@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { WEBCAM_URL } from "@/lib/data"
-import { Camera, ExternalLink, CloudSun } from "lucide-react"
+import { Camera, ExternalLink } from "lucide-react"
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -23,7 +23,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function WebcamPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl lg:text-6xl">Webcam</h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
@@ -54,23 +54,13 @@ export default function WebcamPage() {
 
           <div className="flex flex-col items-center gap-4 px-6 py-6 sm:flex-row sm:justify-between">
             <p className="font-serif text-base text-alpine-100">Quelle: foto-webcam.eu</p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://14-tage-wettervorhersage.de/wetter/obermaiselstein/vorhersage/177202/"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-6 py-3 font-serif text-lg font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-              >
-                <CloudSun className="h-5 w-5" />
-                14-Tage Wettervorhersage
-              </a>
-              <a
-                href={WEBCAM_URL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-6 py-3 font-serif text-lg font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-              >
-                <ExternalLink className="h-5 w-5" />
-                Webcam im neuen Tab
-              </a>
-            </div>
+            <a
+              href={WEBCAM_URL} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-6 py-3 font-serif text-lg font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            >
+              <ExternalLink className="h-5 w-5" />
+              Webcam im neuen Tab
+            </a>
           </div>
         </div>
       </FadeIn>

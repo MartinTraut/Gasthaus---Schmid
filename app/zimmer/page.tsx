@@ -25,7 +25,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function ZimmerPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl lg:text-6xl">
           Unsere Zimmer
@@ -40,7 +40,7 @@ export default function ZimmerPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
           {ROOMS.map((room, index) => (
             <FadeIn key={room.slug} delay={index * 0.1}>
-              <div className="overflow-hidden rounded-2xl border border-warm-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
+              <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-warm-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
                 <Link href={`/zimmer/${room.slug}`} className="relative block aspect-[4/3] overflow-hidden">
                   <Image
                     src={room.image}
@@ -48,10 +48,11 @@ export default function ZimmerPage() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={90}
                     loading="lazy"
                   />
                 </Link>
-                <div className="p-6 md:p-8">
+                <div className="flex flex-1 flex-col p-6 md:p-8">
                   <Link href={`/zimmer/${room.slug}`}>
                     <h3 className="font-serif text-2xl font-bold text-warm-900 transition-colors hover:text-alpine-700 md:text-3xl">
                       {room.name}
@@ -79,7 +80,7 @@ export default function ZimmerPage() {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <div className="mt-auto pt-6 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href={`/zimmer/${room.slug}`}
                       className="flex-1 text-center rounded-xl border-2 border-alpine-700 py-3 px-6 font-serif text-lg font-semibold text-alpine-700 transition-colors hover:bg-alpine-50"

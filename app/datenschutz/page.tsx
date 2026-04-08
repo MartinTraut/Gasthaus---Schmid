@@ -1,6 +1,14 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Datenschutz",
+  description:
+    "Datenschutzerklärung des Gästehaus Schmid in Obermaiselstein im Allgäu – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
+}
+
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <h1 className="mb-8 font-serif text-4xl font-bold text-warm-900">Datenschutzerklärung</h1>
 

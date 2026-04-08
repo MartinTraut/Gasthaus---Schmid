@@ -194,6 +194,7 @@ export const HIKING_TIPS = [
       `${STORAGE}/gaestehaus-schmid-20252/994580/300.jpg?r=1`,
       `${STORAGE}/gaestehaus-schmid-20252/994591/300x225.jpg?r=1`,
       `${STORAGE}/gaestehaus-schmid-20252/994311/300.jpg?r=1`,
+      `${STORAGE}/suedallgaeu/814971/300x225.jpg?r=1`,
     ],
   },
   {
@@ -207,6 +208,7 @@ export const HIKING_TIPS = [
       `${STORAGE}/suedallgaeu/940865/300x225.jpg?r=1`,
       `${STORAGE}/suedallgaeu/940867/300.jpg?r=1`,
       `${STORAGE}/suedallgaeu/940877/300.jpg?r=1`,
+      `${STORAGE}/suedallgaeu/940874/300.jpg?r=1`,
     ],
   },
   {
@@ -220,6 +222,7 @@ export const HIKING_TIPS = [
       `${STORAGE}/suedallgaeu/944592/300.jpg?r=1`,
       `${STORAGE}/suedallgaeu/944595/300.jpg?r=1`,
       `${STORAGE}/suedallgaeu/944590/300.jpg?r=1`,
+      `${STORAGE}/suedallgaeu/944598/300x225.jpg?r=1`,
     ],
   },
   {
@@ -245,6 +248,7 @@ export const HIKING_TIPS = [
       `${STORAGE}/suedallgaeu/944688/300.jpg?r=1`,
       `${STORAGE}/suedallgaeu/940885/300x225.jpg?r=1`,
       `${STORAGE}/suedallgaeu/944691/300.jpg?r=1`,
+      `${STORAGE}/suedallgaeu/940888/300x225.jpg?r=1`,
     ],
   },
 ]
@@ -279,6 +283,24 @@ export const ACTIVITY_LINKS = [
       { name: "Wonnemar Sonthofen", url: "https://www.wonnemar.de/sonthofen/" },
       { name: "Allgäu Walser Card", url: "https://www.allgaeu-walser-card.com/" },
     ],
+  },
+]
+
+export const WINTER_ACTIVITIES = [
+  {
+    title: "Winterwandern",
+    text: "Märchenhafte Wanderungen auf gut geräumten Wegen laden zum Genießen ein.",
+    image: `${STORAGE}/gaestehaus-schmid-20252/1065540/1400.jpg`,
+  },
+  {
+    title: "Langlaufen",
+    text: "Unser Loipennetz mit unzähligen Kilometern verspricht Langlaufvergnügen vom Feinsten.",
+    image: `${STORAGE}/gaestehaus-schmid-20252/1065541/1400.jpg`,
+  },
+  {
+    title: "Skifahren",
+    text: "Die Hörnerdörfer bieten Skivergnügen für Jung und Alt, Könner oder Anfänger.",
+    image: `${STORAGE}/gaestehaus-schmid-20252/1065542/400.webp`,
   },
 ]
 

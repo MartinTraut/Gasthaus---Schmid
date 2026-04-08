@@ -132,6 +132,7 @@ export function Header() {
                 height={60}
                 className="logo-sharp h-10 w-auto sm:h-12"
                 priority
+                quality={90}
               />
             </Link>
 
@@ -163,10 +164,9 @@ export function Header() {
                     onMouseEnter={() => handleOpenDropdown(item.label)}
                     onMouseLeave={handleCloseDropdown}
                   >
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(isOpen ? null : item.label)
-                      }
+                    <Link
+                      href={item.href}
+                      onMouseEnter={() => handleOpenDropdown(item.label)}
                       className={`flex items-center gap-1 rounded-lg px-3 py-2.5 font-serif text-[17px] font-bold transition-all duration-200 ${
                         isActive ? navActiveColor : navTextColor
                       }`}
@@ -177,7 +177,7 @@ export function Header() {
                           isOpen ? "rotate-180" : ""
                         }`}
                       />
-                    </button>
+                    </Link>
 
                     <div className="absolute top-full left-0 h-2 w-full" />
 
@@ -193,13 +193,15 @@ export function Header() {
                             <Link
                               href={child.href}
                               onClick={() => setOpenDropdown(null)}
-                              className={`block px-5 py-3 font-serif text-[17px] transition-colors ${
-                                isOverview ? "font-bold" : "font-semibold"
+                              className={`block px-5 transition-colors ${
+                                isOverview
+                                  ? "py-3.5 font-serif text-[18px] font-extrabold tracking-tight"
+                                  : "py-3 font-serif text-[17px] font-semibold"
                               } ${
                                 pathname === child.href
                                   ? "bg-alpine-50 text-alpine-700"
                                   : isOverview
-                                    ? "text-alpine-800 hover:bg-alpine-50 hover:text-alpine-700"
+                                    ? "text-alpine-900 hover:bg-alpine-50 hover:text-alpine-700"
                                     : "text-warm-800 hover:bg-warm-50 hover:text-alpine-700"
                               }`}
                             >
@@ -265,25 +267,34 @@ export function Header() {
               >
                 {item.children ? (
                   <>
-                    <button
-                      onClick={() =>
-                        setMobileExpanded(
-                          mobileExpanded === item.label
-                            ? null
-                            : item.label
-                        )
-                      }
-                      className="flex w-full items-center justify-between py-5 font-serif text-[24px] font-bold text-warm-900"
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={`h-5 w-5 text-warm-800/50 transition-transform duration-200 ${
-                          mobileExpanded === item.label
-                            ? "rotate-180"
-                            : ""
-                        }`}
-                      />
-                    </button>
+                    <div className="flex items-center justify-between py-5">
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="font-serif text-[24px] font-bold text-warm-900"
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        onClick={() =>
+                          setMobileExpanded(
+                            mobileExpanded === item.label
+                              ? null
+                              : item.label
+                          )
+                        }
+                        className="rounded-lg p-2"
+                        aria-label={`${item.label} Untermenü`}
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 text-warm-800/50 transition-transform duration-200 ${
+                            mobileExpanded === item.label
+                              ? "rotate-180"
+                              : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
                     <div
                       className="overflow-hidden transition-all duration-250 ease-in-out"
                       style={{

@@ -73,7 +73,7 @@ export default function KontaktPage() {
     "w-full rounded-lg border border-warm-200 bg-white px-3 py-2.5 font-serif text-base text-warm-900 placeholder:text-warm-800/40 focus:border-alpine-600 focus:outline-none focus:ring-2 focus:ring-alpine-600/20 transition-colors sm:rounded-xl sm:px-4 sm:py-3 sm:text-lg"
 
   return (
-    <div className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <div className="min-h-screen bg-warm-50 pt-44 pb-20">
       {/* Header */}
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">
@@ -85,7 +85,7 @@ export default function KontaktPage() {
         </h1>
         <p className="mx-auto mt-4 max-w-2xl font-serif text-xl leading-relaxed text-warm-800">
           Kontaktieren Sie uns gerne per Telefon, E-Mail oder über das
-          Kontaktformular – wir beraten Sie persönlich.
+          Kontaktformular. Wir beraten Sie persönlich.
         </p>
       </FadeIn>
 
@@ -205,7 +205,7 @@ export default function KontaktPage() {
                 Nachricht senden
               </h2>
               <p className="mb-6 font-serif text-base text-warm-800">
-                Sie haben eine Frage oder ein Anliegen? Schreiben Sie uns – wir melden uns schnellstmöglich bei Ihnen.
+                Sie haben eine Frage oder ein Anliegen? Schreiben Sie uns, wir melden uns schnellstmöglich bei Ihnen.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">

@@ -108,7 +108,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
 
   if (!room) {
     return (
-      <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+      <main className="min-h-screen bg-warm-50 pt-44 pb-20">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h1 className="font-serif text-3xl text-warm-900">Zimmer nicht gefunden</h1>
           <Link href="/zimmer" className="mt-4 inline-block font-serif text-lg text-alpine-700 underline">
@@ -122,7 +122,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
   const otherRooms = ROOMS.filter((r) => r.slug !== slug)
 
   return (
-    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Link href="/zimmer" className="mb-6 inline-flex items-center gap-2 font-serif text-lg text-alpine-700 hover:text-alpine-800 transition-colors">
           <ArrowLeft className="h-5 w-5" />
@@ -198,7 +198,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
               Interesse an diesem Zimmer?
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-serif text-lg text-warm-800">
-              Senden Sie uns eine unverbindliche Anfrage – wir melden uns schnellstmöglich bei Ihnen.
+              Senden Sie uns eine unverbindliche Anfrage. Wir melden uns schnellstmöglich bei Ihnen.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -234,6 +234,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
                     fill
                     sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    quality={90}
                   />
                 </div>
                 <div className="p-4">
