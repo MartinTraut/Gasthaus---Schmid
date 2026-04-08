@@ -77,22 +77,22 @@ function ImageCarousel({ images, name }: { images: string[]; name: string }) {
 
       {/* Thumbnail Strip */}
       {images.length > 1 && (
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
+        <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
           {images.map((src, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg transition-all md:h-20 md:w-28 ${
+              className={`relative shrink-0 rounded-xl transition-all ${
                 i === current
-                  ? "ring-3 ring-alpine-600 ring-offset-2"
-                  : "opacity-50 hover:opacity-80"
+                  ? "border-[3px] border-alpine-600 shadow-md"
+                  : "border-[3px] border-transparent opacity-50 hover:opacity-80"
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={src}
                 alt={`Thumbnail ${i + 1}`}
-                className="h-full w-full object-cover"
+                className="h-16 w-24 rounded-lg object-cover md:h-20 md:w-28"
                 loading="lazy"
               />
             </button>

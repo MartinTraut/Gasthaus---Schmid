@@ -12,12 +12,12 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setIsInView(true); observer.unobserve(el) } }, { rootMargin: "-50px" })
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setIsInView(true); observer.unobserve(el) } }, { rootMargin: "-40px" })
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
   return (
-    <div ref={ref} className={`transition-all duration-700 ease-out ${className}`} style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateY(0)" : "translateY(20px)", transitionDelay: `${delay * 1000}ms` }}>
+    <div ref={ref} className={`will-change-[opacity,transform] ${className}`} style={{ opacity: isInView ? 1 : 0, transform: isInView ? "translateY(0)" : "translateY(16px)", transition: `opacity 0.5s cubic-bezier(0.25,0.46,0.45,0.94) ${delay}s, transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94) ${delay}s` }}>
       {children}
     </div>
   )
@@ -106,11 +106,6 @@ export default function HikingDetail({ slug }: { slug: string }) {
     <main className="min-h-screen bg-warm-50">
       <div className="pt-44 pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <Link href="/urlaubstipps" className="mb-6 inline-flex items-center gap-2 font-serif text-lg font-semibold text-alpine-700 hover:text-alpine-800">
-            <ArrowLeft className="h-5 w-5" />
-            Zurück zu Urlaubstipps
-          </Link>
-
           {/* Hero Image */}
           <FadeIn>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-xl">
@@ -132,31 +127,41 @@ export default function HikingDetail({ slug }: { slug: string }) {
             </p>
           </FadeIn>
 
-          {/* Image Gallery – größer, 2 Spalten */}
+          {/* Image Gallery – Impressionen (ohne erstes Bild, das ist bereits der Hero) */}
           {tip.images.length > 1 && (
-            <FadeIn delay={0.2} className="mt-14">
-              <h2 className="mb-6 font-serif text-2xl font-bold text-warm-900 sm:text-3xl">Impressionen</h2>
+            <div className="mt-14">
+              <FadeIn>
+                <h2 className="mb-6 font-serif text-2xl font-bold text-warm-900 sm:text-3xl">Impressionen</h2>
+              </FadeIn>
               <div className="grid grid-cols-2 gap-4">
-                {tip.images.map((img, i) => (
-                  <button
-                    key={img}
-                    onClick={() => { setIsLoading(true); setLightboxIndex(i) }}
-                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md"
-                  >
-                    <Image
-                      src={getFullSizeUrl(img)}
-                      alt={`${tip.name} - Bild ${i + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 50vw, 50vw"
-                      quality={90}
-                    />
-                    <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
-                  </button>
+                {tip.images.slice(1).map((img, i) => (
+                  <FadeIn key={img} delay={0.05 + i * 0.1}>
+                    <button
+                      onClick={() => { setIsLoading(true); setLightboxIndex(i + 1) }}
+                      className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md"
+                    >
+                      <Image
+                        src={getFullSizeUrl(img)}
+                        alt={`${tip.name} - Bild ${i + 2}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 50vw, 50vw"
+                        quality={90}
+                      />
+                      <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+                    </button>
+                  </FadeIn>
                 ))}
               </div>
-            </FadeIn>
+            </div>
           )}
+
+          <FadeIn delay={0.2} className="mt-10">
+            <Link href="/urlaubstipps" className="inline-flex items-center gap-2 font-serif text-lg font-semibold text-alpine-700 hover:text-alpine-800 transition-colors">
+              <ArrowLeft className="h-5 w-5" />
+              Zurück zu Urlaubstipps
+            </Link>
+          </FadeIn>
         </div>
       </div>
 
@@ -170,10 +175,10 @@ export default function HikingDetail({ slug }: { slug: string }) {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherTips.map((t, i) => (
-              <FadeIn key={t.slug} delay={i * 0.08}>
+              <FadeIn key={t.slug} delay={0.1 + i * 0.1}>
                 <Link
                   href={`/urlaubstipps/${t.slug}`}
-                  className="group block overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                  className="hover-lift group block overflow-hidden rounded-2xl bg-white shadow-lg"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -182,14 +187,15 @@ export default function HikingDetail({ slug }: { slug: string }) {
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      quality={90}
                     />
                   </div>
                   <div className="p-5 text-center">
-                    <h3 className="font-serif text-lg font-bold text-warm-900 group-hover:text-alpine-700 transition-colors sm:text-xl">
+                    <h3 className="font-serif text-lg font-bold text-warm-900 group-hover:text-alpine-700 transition-colors duration-200 sm:text-xl">
                       {t.name}
                     </h3>
                     <span className="mt-2 inline-flex items-center gap-1 font-serif text-base font-semibold text-alpine-700">
-                      Entdecken <ArrowRight className="h-4 w-4" />
+                      Entdecken <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </span>
                   </div>
                 </Link>
