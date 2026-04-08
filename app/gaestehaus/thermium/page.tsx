@@ -24,11 +24,11 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function ThermiumPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Link href="/gaestehaus" className="mb-6 inline-flex items-center gap-2 font-serif text-lg text-alpine-700 hover:text-alpine-800">
           <ArrowLeft className="h-5 w-5" />
-          Zurueck zum Gaestehaus
+          Zurück zum Gästehaus
         </Link>
       </div>
 
@@ -36,7 +36,7 @@ export default function ThermiumPage() {
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Wellness & Erholung</p>
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl">Thermium</h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
-          Unsere kleine Wellnessanlage fuer Koerper und Seele.
+          Unsere kleine Wellnessanlage für Körper und Seele.
         </p>
       </FadeIn>
 
@@ -64,7 +64,7 @@ export default function ThermiumPage() {
                 <h2 className="font-serif text-2xl font-bold text-warm-900">Dampfsauna</h2>
               </div>
               <p className="font-serif text-lg leading-relaxed text-warm-800">
-                Geniessen Sie wohltuende Waerme in unserer Dampfsauna. Die milde
+                Genießen Sie wohltuende Wärme in unserer Dampfsauna. Die milde
                 Temperatur und hohe Luftfeuchtigkeit sind besonders schonend
                 und ideal zur Entspannung nach einem aktiven Tag in den Bergen.
               </p>
@@ -77,11 +77,11 @@ export default function ThermiumPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-alpine-100 text-alpine-700">
                   <Waves className="h-6 w-6" />
                 </div>
-                <h2 className="font-serif text-2xl font-bold text-warm-900">Infrarotwaermekabine</h2>
+                <h2 className="font-serif text-2xl font-bold text-warm-900">Infrarotwärmekabine</h2>
               </div>
               <p className="font-serif text-lg leading-relaxed text-warm-800">
-                Tiefenwaerme fuer Muskeln und Gelenke. Unsere
-                Infrarotwaermekabine sorgt fuer Entspannung und Wohlbefinden –
+                Tiefenwärme für Muskeln und Gelenke. Unsere
+                Infrarotwärmekabine sorgt für Entspannung und Wohlbefinden –
                 besonders angenehm nach einer Wanderung oder einem Skitag.
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function ThermiumPage() {
 
         <FadeIn delay={0.3} className="text-center">
           <p className="mb-6 font-serif text-lg text-warm-800">
-            Das Thermium steht allen Gaesten des Hauses kostenlos zur Verfuegung.
+            Das Thermium steht allen Gästen des Hauses kostenlos zur Verfügung.
           </p>
           <Link
             href="/kontakt"

@@ -23,23 +23,23 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const highlights = [
-  { icon: Coffee, title: "Fruehstuecksbuffet", text: "Reichhaltiges Buffet mit regionalen Produkten – taeglich frisch fuer Sie zubereitet." },
-  { icon: Sparkles, title: "Thermium Wellness", text: "Kleine Wellnessanlage mit Dampfsauna und Infrarotwaermekabine zur Erholung." },
-  { icon: Droplets, title: "Grander Wasser", text: "Belebtes Wasser nach der Grander-Technologie fuer Ihr Wohlbefinden." },
-  { icon: Award, title: "Ausgezeichnete Qualitaet", text: "Persoenlicher Service und liebevolle Ausstattung fuer Ihren perfekten Urlaub." },
+  { icon: Coffee, title: "Frühstücksbuffet", text: "Reichhaltiges Buffet mit regionalen Produkten – täglich frisch für Sie zubereitet." },
+  { icon: Sparkles, title: "Thermium Wellness", text: "Kleine Wellnessanlage mit Dampfsauna und Infrarotwärmekabine zur Erholung." },
+  { icon: Droplets, title: "Grander Wasser", text: "Belebtes Wasser nach der Grander-Technologie für Ihr Wohlbefinden." },
+  { icon: Award, title: "Ausgezeichnete Qualität", text: "Persönlicher Service und liebevolle Ausstattung für Ihren perfekten Urlaub." },
 ]
 
 export default function GaestehausPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       {/* Header */}
       <FadeIn className="mx-auto mb-14 max-w-6xl px-4 text-center sm:px-6">
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Nicht daheim und doch zu Hause</p>
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl lg:text-6xl">
-          Gaestehaus Schmid
+          Gästehaus Schmid
         </h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
-          Urlaub mit Herz in Obermaiselstein im Allgaeu – gemuetlich, freundlich, familiaer.
+          Urlaub mit Herz in Obermaiselstein im Allgäu – gemütlich, freundlich, familiär.
         </p>
       </FadeIn>
 
@@ -50,7 +50,7 @@ export default function GaestehausPage() {
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <Image
                 src="https://storage.tramino.net/gaestehaus-schmid-20252/987420/567x319.jpg?r=1"
-                alt="Gaestehaus Schmid Aussenansicht"
+                alt="Gästehaus Schmid Außenansicht"
                 width={600}
                 height={340}
                 className="h-auto w-full object-cover"
@@ -59,18 +59,18 @@ export default function GaestehausPage() {
             </div>
             <div>
               <h2 className="mb-6 font-serif text-3xl font-semibold text-warm-900 sm:text-4xl">
-                Willkommen in unserem Gaestehaus
+                Willkommen in unserem Gästehaus
               </h2>
               <p className="mb-4 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                Unser Gaestehaus liegt in ruhiger Lage auf 859m Hoehe in
+                Unser Gästehaus liegt in ruhiger Lage auf 859m Höhe in
                 Obermaiselstein, nahe Fischen und Oberstdorf. Hier erwartet
                 Sie Tradition, Natur und abwechslungsreiche
-                Freizeitmoeglichkeiten von Fruehling bis Winter.
+                Freizeitmöglichkeiten von Frühling bis Winter.
               </p>
               <p className="mb-6 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                Geniessen Sie den Panoramablick auf die Berge, erholsame
-                Ruhe und zeitgemaessen Komfort. Fuenf individuell
-                eingerichtete Zimmer, ein reichhaltiges Fruehstuecksbuffet
+                Genießen Sie den Panoramablick auf die Berge, erholsame
+                Ruhe und zeitgemäßen Komfort. Fünf individuell
+                eingerichtete Zimmer, ein reichhaltiges Frühstücksbuffet
                 und unser kleiner Wellnessbereich machen Ihren Aufenthalt
                 unvergesslich.
               </p>
@@ -104,23 +104,23 @@ export default function GaestehausPage() {
             <div className="order-2 lg:order-1">
               <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Guten Morgen</p>
               <h2 className="mb-6 font-serif text-3xl font-semibold text-warm-900 sm:text-4xl">
-                Fruehstueck mit regionalen Produkten
+                Frühstück mit regionalen Produkten
               </h2>
               <p className="mb-4 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
                 Starten Sie den Tag mit unserem leckeren, reichhaltigen
-                Fruehstuecksbuffet mit regionalen Produkten. Frisch gestaerkt
-                geniessen Sie einen erlebnisreichen Tag im schoenen Allgaeu.
+                Frühstücksbuffet mit regionalen Produkten. Frisch gestärkt
+                genießen Sie einen erlebnisreichen Tag im schönen Allgäu.
               </p>
               <p className="font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                Von frischem Gebaeck ueber hausgemachte Marmeladen bis hin
-                zu regionaler Wurst und Kaese – wir verwenden Produkte
+                Von frischem Gebäck über hausgemachte Marmeladen bis hin
+                zu regionaler Wurst und Käse – wir verwenden Produkte
                 von Erzeugern aus der Region.
               </p>
             </div>
             <div className="relative order-1 overflow-hidden rounded-2xl shadow-xl lg:order-2">
               <Image
                 src="https://storage.tramino.net/gaestehaus-schmid-20252/987421/400x300.jpg"
-                alt="Fruehstuecksraum mit gedecktem Tisch"
+                alt="Frühstücksraum mit gedecktem Tisch"
                 width={600}
                 height={450}
                 className="h-auto w-full object-cover"

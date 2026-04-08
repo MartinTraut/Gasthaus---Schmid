@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, Phone, ChevronDown } from "lucide-react"
 
@@ -14,10 +15,10 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: "Willkommen", href: "/" },
   {
-    label: "Gaestehaus",
+    label: "Gästehaus",
     href: "/gaestehaus",
     children: [
-      { label: "Ueber uns", href: "/gaestehaus" },
+      { label: "Über uns", href: "/gaestehaus" },
       { label: "Thermium Wellness", href: "/gaestehaus/thermium" },
     ],
   },
@@ -25,6 +26,7 @@ const NAV_ITEMS: NavItem[] = [
     label: "Zimmer",
     href: "/zimmer",
     children: [
+      { label: "Alle Zimmer", href: "/zimmer" },
       { label: "Doppelzimmer Nr. 1", href: "/zimmer/doppelzimmer-1" },
       { label: "Doppelzimmer Nr. 2", href: "/zimmer/doppelzimmer-2" },
       { label: "Einzelzimmer Nr. 3", href: "/zimmer/einzelzimmer-3" },
@@ -36,24 +38,25 @@ const NAV_ITEMS: NavItem[] = [
     label: "Urlaubstipps",
     href: "/urlaubstipps",
     children: [
-      { label: "Wandern & Aktivitaeten", href: "/urlaubstipps" },
+      { label: "Wandern & Aktivitäten", href: "/urlaubstipps" },
       { label: "Besler", href: "/urlaubstipps/besler" },
       { label: "Gaisalpe", href: "/urlaubstipps/gaisalpe" },
-      { label: "Gruenten", href: "/urlaubstipps/gruenten" },
+      { label: "Grünten", href: "/urlaubstipps/gruenten" },
       { label: "Riedbergerhorn", href: "/urlaubstipps/riedbergerhorn" },
       { label: "Sonderdorfer Kreuz", href: "/urlaubstipps/sonderdorfer-kreuz" },
     ],
   },
   {
-    label: "Service",
-    href: "/service",
+    label: "Bildergalerie",
+    href: "/galerie",
     children: [
-      { label: "Lage & Anfahrt", href: "/service/anfahrt" },
-      { label: "Kontakt", href: "/kontakt" },
+      { label: "Alle Bilder", href: "/galerie" },
+      { label: "Gästehaus Schmid", href: "/galerie#gaestehaus" },
+      { label: "Umgebung & Natur", href: "/galerie#umgebung" },
     ],
   },
-  { label: "Galerie", href: "/galerie" },
   { label: "Webcam", href: "/webcam" },
+  { label: "Kontakt", href: "/kontakt" },
 ]
 
 export function Header() {
@@ -106,8 +109,8 @@ export function Header() {
     : "text-white hover:text-white/80"
 
   const navActiveColor = isScrolled || !isHome
-    ? "text-alpine-700 font-bold"
-    : "text-white font-bold"
+    ? "text-alpine-700 font-bold bg-alpine-50 rounded-lg"
+    : "text-white font-bold underline underline-offset-4 decoration-2"
 
   return (
     <>
@@ -116,10 +119,20 @@ export function Header() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3">
-            <Link href="/" className="shrink-0 py-2.5">
-              <span className={`font-serif text-xl font-bold sm:text-2xl ${isScrolled || !isHome ? "text-alpine-800" : "text-white"}`}>
-                Gaestehaus Schmid
-              </span>
+            <Link
+              href="/"
+              className={`shrink-0 py-1 transition-all duration-500 ${
+                isHome && !isScrolled ? "pointer-events-none opacity-0" : "opacity-100"
+              }`}
+            >
+              <Image
+                src="/logo.png"
+                alt="Gästehaus Schmid"
+                width={180}
+                height={60}
+                className="logo-sharp h-10 w-auto sm:h-12"
+                priority
+              />
             </Link>
 
             <nav className="hidden items-center gap-0.5 xl:flex">
@@ -134,7 +147,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded-lg px-3 py-2.5 font-serif text-[16px] font-semibold transition-all duration-200 ${
+                      className={`rounded-lg px-3 py-2.5 font-serif text-[17px] font-bold transition-all duration-200 ${
                         isActive ? navActiveColor : navTextColor
                       }`}
                     >
@@ -154,7 +167,7 @@ export function Header() {
                       onClick={() =>
                         setOpenDropdown(isOpen ? null : item.label)
                       }
-                      className={`flex items-center gap-1 rounded-lg px-3 py-2.5 font-serif text-[16px] font-semibold transition-all duration-200 ${
+                      className={`flex items-center gap-1 rounded-lg px-3 py-2.5 font-serif text-[17px] font-bold transition-all duration-200 ${
                         isActive ? navActiveColor : navTextColor
                       }`}
                     >
@@ -173,20 +186,31 @@ export function Header() {
                         isOpen ? "scale-100 opacity-100 pointer-events-auto" : "scale-[0.98] opacity-0 pointer-events-none"
                       }`}
                     >
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => setOpenDropdown(null)}
-                          className={`block px-5 py-3 font-serif text-[16px] font-medium transition-colors ${
-                            pathname === child.href
-                              ? "bg-alpine-50 text-alpine-700"
-                              : "text-warm-800 hover:bg-warm-50 hover:text-alpine-700"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {item.children.map((child, childIndex) => {
+                        const isOverview = childIndex === 0 && (child.label.startsWith("Alle") || child.label.startsWith("Wandern"))
+                        return (
+                          <div key={child.href}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setOpenDropdown(null)}
+                              className={`block px-5 py-3 font-serif text-[17px] transition-colors ${
+                                isOverview ? "font-bold" : "font-semibold"
+                              } ${
+                                pathname === child.href
+                                  ? "bg-alpine-50 text-alpine-700"
+                                  : isOverview
+                                    ? "text-alpine-800 hover:bg-alpine-50 hover:text-alpine-700"
+                                    : "text-warm-800 hover:bg-warm-50 hover:text-alpine-700"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                            {isOverview && (
+                              <div className="mx-4 border-b border-warm-100" />
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
                 )
@@ -195,7 +219,7 @@ export function Header() {
 
             <a
               href="tel:+4983267165"
-              className="hidden items-center gap-2 rounded-lg bg-alpine-700 px-5 py-2.5 font-serif text-[15px] font-semibold text-white shadow-sm transition-all hover:bg-alpine-800 hover:shadow-md xl:inline-flex"
+              className="hidden items-center gap-2 rounded-lg bg-alpine-700 px-5 py-2.5 font-serif text-[16px] font-bold text-white shadow-sm transition-all hover:bg-alpine-800 hover:shadow-md xl:inline-flex"
             >
               <Phone className="h-4 w-4" />
               Anrufen
@@ -214,7 +238,7 @@ export function Header() {
                 className={`rounded-lg p-3 transition-colors ${
                   isHome && !isScrolled ? "text-white" : "text-warm-900"
                 }`}
-                aria-label="Menue"
+                aria-label="Menü"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -249,7 +273,7 @@ export function Header() {
                             : item.label
                         )
                       }
-                      className="flex w-full items-center justify-between py-5 font-serif text-[22px] font-semibold text-warm-900"
+                      className="flex w-full items-center justify-between py-5 font-serif text-[24px] font-bold text-warm-900"
                     >
                       {item.label}
                       <ChevronDown
@@ -272,10 +296,10 @@ export function Header() {
                           key={child.href}
                           href={child.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block py-3 pl-5 font-serif text-[17px] ${
+                          className={`block py-3 pl-5 font-serif text-[19px] ${
                             pathname === child.href
-                              ? "font-semibold text-alpine-700"
-                              : "text-warm-800/80"
+                              ? "font-bold text-alpine-700"
+                              : "font-semibold text-warm-800/80"
                           }`}
                         >
                           {child.label}
@@ -288,7 +312,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block py-5 font-serif text-[22px] font-semibold ${
+                    className={`block py-5 font-serif text-[24px] font-bold ${
                       pathname === item.href
                         ? "text-alpine-700"
                         : "text-warm-900"

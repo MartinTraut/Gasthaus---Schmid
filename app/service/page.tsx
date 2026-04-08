@@ -24,11 +24,11 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-5xl px-4 text-center sm:px-6">
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl lg:text-6xl">Service</h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
-          Alles rund um Ihren Aufenthalt im Gaestehaus Schmid.
+          Alles rund um Ihren Aufenthalt im Gästehaus Schmid.
         </p>
       </FadeIn>
 

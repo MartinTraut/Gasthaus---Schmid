@@ -1,15 +1,15 @@
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <h1 className="mb-8 font-serif text-4xl font-bold text-warm-900">Impressum</h1>
 
         <div className="space-y-8 font-serif text-lg leading-relaxed text-warm-800">
           <section>
-            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Angaben gemaess § 5 DDG</h2>
+            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Angaben gemäß § 5 DDG</h2>
             <p>
               Rosel Schmid<br />
-              Gaestehaus Schmid<br />
+              Gästehaus Schmid<br />
               Hoistaig 3<br />
               87538 Obermaiselstein<br />
               Deutschland
@@ -27,20 +27,20 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Haftung fuer Inhalte</h2>
+            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Haftung für Inhalte</h2>
             <p>
-              Als Diensteanbieter sind wir gemaess § 7 Abs. 1 DDG fuer eigene Inhalte
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte
               auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8
               bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet,
-              uebermittelte oder gespeicherte fremde Informationen zu ueberwachen.
+              übermittelte oder gespeicherte fremde Informationen zu überwachen.
             </p>
           </section>
 
           <section>
-            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Haftung fuer Links</h2>
+            <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Haftung für Links</h2>
             <p>
-              Unser Angebot enthaelt Links zu externen Websites Dritter, auf deren
-              Inhalte wir keinen Einfluss haben. Fuer die Inhalte der verlinkten Seiten
+              Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+              Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten
               ist stets der jeweilige Anbieter verantwortlich.
             </p>
           </section>
@@ -49,9 +49,9 @@ export default function ImpressumPage() {
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Urheberrecht</h2>
             <p>
               Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
-              Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfaeltigung,
-              Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der
-              Grenzen des Urheberrechtes beduerfen der schriftlichen Zustimmung des
+              Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+              Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+              Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des
               jeweiligen Autors bzw. Erstellers.
             </p>
           </section>
@@ -59,7 +59,7 @@ export default function ImpressumPage() {
           <section>
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">Streitschlichtung</h2>
             <p>
-              Die Europaeische Kommission stellt eine Plattform zur
+              Die Europäische Kommission stellt eine Plattform zur
               Online-Streitbeilegung (OS) bereit. Wir sind nicht bereit oder
               verpflichtet, an Streitbeilegungsverfahren vor einer
               Verbraucherschlichtungsstelle teilzunehmen.

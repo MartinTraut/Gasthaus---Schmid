@@ -27,27 +27,29 @@ const greatVibes = Great_Vibes({
 
 export const metadata: Metadata = {
   title: {
-    default: "Gaestehaus Schmid | Urlaub in Obermaiselstein im Allgaeu",
-    template: "%s | Gaestehaus Schmid",
+    default: "Gästehaus Schmid | Urlaub in Obermaiselstein im Allgäu",
+    template: "%s | Gästehaus Schmid Obermaiselstein",
   },
   description:
-    "Gemuetliches Gaestehaus mit Fruehstueck und Panoramablick in die Allgaeuer Alpen. Komfortable Zimmer in Obermaiselstein auf 859m Hoehe. Familiaer, herzlich, erholsam.",
+    "Gemütliches Gästehaus mit Frühstück und Panoramablick auf die Allgäuer Alpen. Komfortable Zimmer in Obermaiselstein auf 859 m Höhe – ideal für Wanderurlaub und Skiurlaub in den Hörnerdörfern. Familiär, herzlich, erholsam.",
   keywords: [
-    "Gaestehaus Obermaiselstein",
-    "Pension Allgaeu",
+    "Gästehaus Obermaiselstein",
+    "Pension Allgäu",
     "Urlaub Obermaiselstein",
-    "Gaestehaus Schmid",
-    "Zimmer mit Fruehstueck Allgaeu",
-    "Wanderurlaub Allgaeu",
-    "Skiurlaub Allgaeu",
-    "Hoernerdoerfer",
+    "Gästehaus Schmid",
+    "Zimmer mit Frühstück Allgäu",
+    "Wanderurlaub Allgäu",
+    "Skiurlaub Allgäu",
+    "Hörnerdörfer",
+    "Ferienwohnung Obermaiselstein",
+    "Unterkunft Oberallgäu",
   ],
   openGraph: {
-    title: "Gaestehaus Schmid | Urlaub in Obermaiselstein im Allgaeu",
+    title: "Gästehaus Schmid – Urlaub in Obermaiselstein im Allgäu",
     description:
-      "Gemuetliches Gaestehaus mit Fruehstueck und Panoramablick in die Allgaeuer Alpen.",
+      "Gemütliches Gästehaus mit Frühstück und Panoramablick auf die Allgäuer Alpen. Familiäre Gastfreundschaft in den Hörnerdörfern.",
     url: "https://www.gaestehaus-schmid.info",
-    siteName: "Gaestehaus Schmid",
+    siteName: "Gästehaus Schmid",
     locale: "de_DE",
     type: "website",
     images: [
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
         url: "https://storage.tramino.net/gaestehaus-schmid-20252/993331/1200.jpg?r=1",
         width: 1200,
         height: 630,
-        alt: "Gaestehaus Schmid - Urlaub in Obermaiselstein",
+        alt: "Gästehaus Schmid – Panoramablick in Obermaiselstein im Allgäu",
       },
     ],
   },
@@ -76,9 +78,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LodgingBusiness",
-              name: "Gaestehaus Schmid",
+              name: "Gästehaus Schmid",
               description:
-                "Gemuetliches Gaestehaus mit Fruehstueck und Panoramablick in die Allgaeuer Alpen in Obermaiselstein.",
+                "Gemütliches Gästehaus mit Frühstück und Panoramablick auf die Allgäuer Alpen in Obermaiselstein. Familiäre Gastfreundschaft in den Hörnerdörfern im Oberallgäu.",
               url: "https://www.gaestehaus-schmid.info",
               telephone: "+49 8326 7165",
               email: "post@gaestehaus-schmid.info",
@@ -86,6 +88,7 @@ export default function RootLayout({
                 "@type": "PostalAddress",
                 streetAddress: "Hoistaig 3",
                 addressLocality: "Obermaiselstein",
+                addressRegion: "Bayern",
                 postalCode: "87538",
                 addressCountry: "DE",
               },
@@ -96,8 +99,9 @@ export default function RootLayout({
               },
               image:
                 "https://storage.tramino.net/gaestehaus-schmid-20252/993331/1200.jpg?r=1",
+              priceRange: "€€",
               amenityFeature: [
-                { "@type": "LocationFeatureSpecification", name: "Fruehstuecksbuffet", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Frühstücksbuffet", value: true },
                 { "@type": "LocationFeatureSpecification", name: "WLAN", value: true },
                 { "@type": "LocationFeatureSpecification", name: "Thermium Wellness", value: true },
               ],

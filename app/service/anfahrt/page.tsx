@@ -22,7 +22,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function AnfahrtPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       <FadeIn className="mx-auto mb-14 max-w-5xl px-4 text-center sm:px-6">
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl lg:text-6xl">Lage & Anfahrt</h1>
         <p className="mx-auto mt-5 max-w-3xl font-serif text-xl leading-relaxed text-warm-800 md:text-2xl">
@@ -57,7 +57,7 @@ export default function AnfahrtPage() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2700!2d10.2382746!3d47.4479675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI2JzUyLjciTiAxMMKwMTQnMTcuOCJF!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde"
               width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full"
-              title="Gaestehaus Schmid auf Google Maps"
+              title="Gästehaus Schmid auf Google Maps"
             />
             <div className="p-6 text-center">
               <a

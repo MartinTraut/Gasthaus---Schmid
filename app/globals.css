@@ -96,8 +96,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.75;
     letter-spacing: 0.01em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -125,13 +125,13 @@
     font-weight: 600;
   }
 
-  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-  h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
-  h3 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
+  h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+  h2 { font-size: clamp(1.85rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
 
   p {
     font-family: var(--font-serif);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     font-weight: 600;
   }
@@ -186,12 +186,12 @@ button, a, select, input[type="date"], input[type="number"] {
 
 @media (max-width: 640px) {
   body {
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
   }
   p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.75;
   }
   .accent-script {
     font-size: inherit;
@@ -203,10 +203,10 @@ button, a, select, input[type="date"], input[type="number"] {
 
 @media (min-width: 641px) and (max-width: 1024px) {
   body {
-    font-size: 17px;
+    font-size: 18px;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 }
 

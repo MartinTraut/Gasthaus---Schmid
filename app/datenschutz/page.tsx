@@ -1,15 +1,15 @@
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen bg-warm-50 pt-28 pb-20">
+    <main className="min-h-screen bg-warm-50 pt-36 pb-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h1 className="mb-8 font-serif text-4xl font-bold text-warm-900">Datenschutzerklaerung</h1>
+        <h1 className="mb-8 font-serif text-4xl font-bold text-warm-900">Datenschutzerklärung</h1>
 
         <div className="space-y-8 font-serif text-lg leading-relaxed text-warm-800">
           <section>
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">1. Verantwortliche Stelle</h2>
             <p>
               Rosel Schmid<br />
-              Gaestehaus Schmid<br />
+              Gästehaus Schmid<br />
               Hoistaig 3<br />
               87538 Obermaiselstein<br />
               E-Mail: post@gaestehaus-schmid.info<br />
@@ -21,9 +21,9 @@ export default function DatenschutzPage() {
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">2. Erhebung und Speicherung personenbezogener Daten</h2>
             <p>
               Beim Besuch unserer Website werden automatisch Informationen
-              durch den Browser uebermittelt und in Server-Logfiles gespeichert.
+              durch den Browser übermittelt und in Server-Logfiles gespeichert.
               Diese Daten werden nicht bestimmten Personen zugeordnet und
-              nicht mit anderen Datenquellen zusammengefuehrt.
+              nicht mit anderen Datenquellen zusammengeführt.
             </p>
           </section>
 
@@ -41,18 +41,18 @@ export default function DatenschutzPage() {
             <p>
               Diese Seite nutzt Google Maps zur Darstellung interaktiver
               Karten. Bei der Nutzung von Google Maps werden auch Daten
-              ueber die Nutzung der Kartenfunktionen durch Besucher erhoben
-              und an Google uebermittelt.
+              über die Nutzung der Kartenfunktionen durch Besucher erhoben
+              und an Google übermittelt.
             </p>
           </section>
 
           <section>
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">5. Ihre Rechte</h2>
             <p>
-              Sie haben das Recht auf Auskunft, Berichtigung, Loeschung und
-              Einschraenkung der Verarbeitung Ihrer personenbezogenen Daten.
+              Sie haben das Recht auf Auskunft, Berichtigung, Löschung und
+              Einschränkung der Verarbeitung Ihrer personenbezogenen Daten.
               Sie haben zudem das Recht, sich bei einer
-              Datenschutz-Aufsichtsbehoerde ueber die Verarbeitung Ihrer
+              Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer
               personenbezogenen Daten zu beschweren.
             </p>
           </section>
@@ -61,7 +61,7 @@ export default function DatenschutzPage() {
             <h2 className="mb-3 font-serif text-2xl font-bold text-warm-900">6. Cookies</h2>
             <p>
               Diese Website verwendet keine Tracking-Cookies. Es werden
-              lediglich technisch notwendige Cookies gesetzt, die fuer den
+              lediglich technisch notwendige Cookies gesetzt, die für den
               Betrieb der Website erforderlich sind.
             </p>
           </section>

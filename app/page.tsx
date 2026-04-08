@@ -50,16 +50,16 @@ function FadeInSection({
 }
 
 const stats = [
-  { icon: Mountain, value: "859m", label: "Hoehe" },
+  { icon: Mountain, value: "859m", label: "Höhe" },
   { icon: Home, value: "5", label: "Zimmer" },
-  { icon: Coffee, value: "Taeglich", label: "Fruehstueck" },
+  { icon: Coffee, value: "Täglich", label: "Frühstück" },
 ]
 
 const usps = [
-  { icon: Coffee, text: "Reichhaltiges Fruehstuecksbuffet mit regionalen Produkten" },
-  { icon: Sparkles, text: "Thermium: Dampfsauna & Infrarotwaermekabine" },
-  { icon: BusFront, text: "Bushaltestelle in 2 Min. – oeffentl. Verkehr groesstenteils kostenlos" },
-  { icon: Users, text: "Familiaer, herzlich und persoenlich" },
+  { icon: Coffee, text: "Reichhaltiges Frühstücksbuffet mit regionalen Produkten" },
+  { icon: Sparkles, text: "Thermium: Dampfsauna & Infrarotwärmekabine" },
+  { icon: BusFront, text: "Bushaltestelle in 2 Min. – öffentl. Verkehr größtenteils kostenlos" },
+  { icon: Users, text: "Familiär, herzlich und persönlich" },
 ]
 
 export default function HomePage() {
@@ -108,16 +108,25 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/55" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-24 text-center text-white">
+          <Image
+            src="/logo.png"
+            alt="Gästehaus Schmid"
+            width={280}
+            height={94}
+            className="logo-sharp mb-6 h-16 w-auto brightness-0 invert sm:h-20 md:h-24 animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
+            priority
+          />
           <p
             className="mb-4 font-serif text-base tracking-[0.2em] uppercase text-white sm:text-lg animate-fade-in-up"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.2s" }}
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.3s" }}
           >
-            Urlaub in Obermaiselstein auf 859m Hoehe
+            Urlaub in Obermaiselstein auf 859m Höhe
           </p>
 
           <h1
             className="mb-6 max-w-4xl font-serif text-3xl leading-tight font-semibold sm:text-4xl md:text-5xl lg:text-6xl animate-fade-in-up"
-            style={{ textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)", animationDelay: "0.5s" }}
+            style={{ textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
           >
             Nicht daheim und doch{" "}
             <span className="accent-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
@@ -127,15 +136,15 @@ export default function HomePage() {
 
           <p
             className="mb-10 max-w-2xl font-serif text-lg leading-relaxed text-white sm:text-xl animate-fade-in-up"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.8s" }}
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.9s" }}
           >
-            Gemuetlich, freundlich, familiaer – entfliehen Sie dem Alltag
-            und geniessen Sie erholsame Tage im schoenen Allgaeu.
+            Gemütlich, herzlich, familiär – lassen Sie den Alltag hinter sich
+            und genießen Sie erholsame Tage im wunderschönen Allgäu.
           </p>
 
           <div
             className="flex flex-col gap-4 sm:flex-row animate-fade-in-up"
-            style={{ animationDelay: "1.1s" }}
+            style={{ animationDelay: "1.2s" }}
           >
             <Link
               href="/zimmer"
@@ -168,7 +177,7 @@ export default function HomePage() {
         </a>
       </div>
 
-      {/* Ueber uns Section */}
+      {/* Über uns Section */}
       <section id="ueber-uns" className="bg-warm-50 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -176,7 +185,7 @@ export default function HomePage() {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://storage.tramino.net/gaestehaus-schmid-20252/993331/1200.jpg?r=1"
-                  alt="Gaestehaus Schmid im Allgaeu"
+                  alt="Gästehaus Schmid im Allgäu"
                   width={600}
                   height={450}
                   className="h-auto w-full object-cover"
@@ -197,23 +206,23 @@ export default function HomePage() {
 
               <FadeInSection delay={0.3}>
                 <p className="mb-4 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                  Das Gaestehaus Schmid laedt Sie ein, dem Alltag zu entfliehen.
-                  In einem ruhigen Bergort auf 859m Hoehe, nahe Fischen und
-                  Oberstdorf, erwartet Sie Tradition, Natur und
-                  abwechslungsreiche Freizeitmoeglichkeiten von Fruehling bis
-                  Winter.
+                  Unser Gästehaus liegt in Obermaiselstein auf 859m Höhe,
+                  eingebettet zwischen Fischen und Oberstdorf. Hier erwartet
+                  Sie Allgäuer Gastfreundschaft, unberührte Natur und
+                  abwechslungsreiche Freizeitmöglichkeiten zu jeder
+                  Jahreszeit.
                 </p>
                 <p className="mb-8 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                  Geniessen Sie den Panoramablick auf die Berge, erholsame Ruhe
-                  und zeitgemaessen Komfort. Ob Familien, Paare oder
-                  Alleinreisende – bei uns finden Sie Ihren persoenlichen
-                  Rueckzugsort.
+                  Genießen Sie den Panoramablick auf die Allgäuer Berge,
+                  die Ruhe der Natur und zeitgemäßen Komfort. Ob als Familie,
+                  Paar oder allein – bei uns finden Sie Ihren persönlichen
+                  Rückzugsort.
                 </p>
               </FadeInSection>
 
               <FadeInSection delay={0.45}>
                 <p className="accent-script mb-8 text-2xl text-alpine-700 sm:text-3xl">
-                  Herzliche Gruesse, Familie Schmid
+                  Herzliche Grüße, Familie Schmid
                 </p>
               </FadeInSection>
 
@@ -269,7 +278,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Fruehstueck Section */}
+      {/* Frühstück Section */}
       <section className="bg-warm-50 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -279,17 +288,17 @@ export default function HomePage() {
                   Guten Morgen
                 </p>
                 <h2 className="mb-6 font-serif text-3xl font-semibold text-warm-900 sm:text-4xl lg:text-5xl">
-                  Unser Fruehstuecksbuffet
+                  Unser Frühstücksbuffet
                 </h2>
                 <p className="mb-6 font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                  Starten Sie den Tag mit unserem leckeren, reichhaltigen
-                  Fruehstuecksbuffet mit regionalen Produkten. Frisch gestaerkt
-                  geniessen Sie einen erlebnisreichen Tag im schoenen Allgaeu.
+                  Starten Sie gut gestärkt in den Tag: Unser reichhaltiges
+                  Frühstücksbuffet verwöhnt Sie mit regionalen Produkten
+                  aus dem Allgäu. So beginnt jeder Urlaubstag genau richtig.
                 </p>
                 <p className="font-serif text-lg leading-relaxed text-warm-800 sm:text-xl">
-                  Wir legen grossen Wert auf Qualitaet und Frische. Regionale Spezialitaeten,
-                  frisches Gebaeck und hausgemachte Marmeladen machen unser Fruehstueck
-                  zu einem besonderen Genuss.
+                  Wir legen großen Wert auf Qualität und Frische. Regionale
+                  Spezialitäten, frisches Gebäck und hausgemachte Marmeladen
+                  machen unser Frühstück zu einem besonderen Genuss.
                 </p>
               </FadeInSection>
             </div>
@@ -297,7 +306,7 @@ export default function HomePage() {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://storage.tramino.net/gaestehaus-schmid-20252/987421/1200.jpg"
-                  alt="Fruehstuecksraum im Gaestehaus Schmid"
+                  alt="Frühstücksraum im Gästehaus Schmid"
                   width={600}
                   height={450}
                   className="h-auto w-full object-cover"
@@ -318,11 +327,11 @@ export default function HomePage() {
             </p>
             <h2 className="mb-4 font-serif text-3xl font-semibold text-warm-900 sm:text-4xl lg:text-5xl">
               Komfort und{" "}
-              <span className="accent-script text-4xl text-alpine-700 sm:text-5xl">Gemuetlichkeit</span>
+              <span className="accent-script text-4xl text-alpine-700 sm:text-5xl">Gemütlichkeit</span>
             </h2>
             <p className="mx-auto max-w-2xl font-serif text-lg text-warm-800 sm:text-xl">
-              Fuenf liebevoll eingerichtete Zimmer erwarten Sie – finden Sie das
-              passende fuer Ihren Traumurlaub.
+              Fünf liebevoll eingerichtete Zimmer erwarten Sie. Finden Sie
+              das passende für Ihren Urlaub im Allgäu.
             </p>
           </FadeInSection>
 
@@ -389,8 +398,8 @@ export default function HomePage() {
               <span className="accent-script text-4xl text-alpine-700 sm:text-5xl">auf Sie</span>
             </h2>
             <p className="mx-auto mb-12 max-w-2xl font-serif text-lg text-warm-800 sm:text-xl">
-              Haben Sie Fragen oder moechten Sie ein Zimmer buchen?
-              Kontaktieren Sie uns gerne – wir helfen Ihnen weiter.
+              Haben Sie Fragen oder möchten Sie ein Zimmer buchen?
+              Wir sind gerne für Sie da und helfen Ihnen weiter.
             </p>
           </FadeInSection>
 

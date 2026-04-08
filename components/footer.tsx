@@ -1,19 +1,26 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, Phone, Mail, Smartphone, CloudSun } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-warm-900 text-white/75">
+    <footer className="bg-alpine-900 text-white/75">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo + Beschreibung */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="font-serif text-xl font-bold text-white">
-              Gaestehaus Schmid
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="Gästehaus Schmid"
+                width={160}
+                height={54}
+                className="logo-sharp h-11 w-auto brightness-0 invert"
+              />
             </Link>
-            <p className="mt-4 font-serif text-[14px] leading-relaxed text-white/50">
-              Gemuetliches Gaestehaus mit Fruehstueck und Panoramablick in die
-              Allgaeuer Alpen. Ihr Zuhause auf 859 Metern Hoehe.
+            <p className="mt-4 font-serif text-[15px] leading-relaxed text-white/60">
+              Gemütliches Gästehaus mit Frühstück und Panoramablick in die
+              Allgäuer Alpen. Ihr Zuhause auf 859 Metern Höhe.
             </p>
             <a
               href="https://14-tage-wettervorhersage.de/wetter/obermaiselstein/vorhersage/177202/"
@@ -28,13 +35,13 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-serif text-[15px] font-semibold text-white">
+            <h3 className="font-serif text-[17px] font-bold text-white">
               Schnellzugriff
             </h3>
             <ul className="mt-4 space-y-2">
               {[
                 { label: "Startseite", href: "/" },
-                { label: "Gaestehaus", href: "/gaestehaus" },
+                { label: "Gästehaus", href: "/gaestehaus" },
                 { label: "Zimmer", href: "/zimmer" },
                 { label: "Urlaubstipps", href: "/urlaubstipps" },
                 { label: "Galerie", href: "/galerie" },
@@ -44,7 +51,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-serif text-[14px] text-white/50 transition-colors hover:text-white"
+                    className="font-serif text-[15px] text-white/60 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -55,7 +62,7 @@ export function Footer() {
 
           {/* Zimmer */}
           <div>
-            <h3 className="font-serif text-[15px] font-semibold text-white">
+            <h3 className="font-serif text-[17px] font-bold text-white">
               Unsere Zimmer
             </h3>
             <ul className="mt-4 space-y-2">
@@ -69,7 +76,7 @@ export function Footer() {
                 <li key={room.href}>
                   <Link
                     href={room.href}
-                    className="font-serif text-[14px] text-white/50 transition-colors hover:text-white"
+                    className="font-serif text-[15px] text-white/60 transition-colors hover:text-white"
                   >
                     {room.name}
                   </Link>
@@ -80,11 +87,11 @@ export function Footer() {
 
           {/* Kontakt */}
           <div>
-            <h3 className="font-serif text-[15px] font-semibold text-white">
+            <h3 className="font-serif text-[17px] font-bold text-white">
               Kontakt
             </h3>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-2.5 font-serif text-[14px]">
+              <li className="flex items-start gap-2.5 font-serif text-[15px]">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/30" />
                 <span>
                   Hoistaig 3
@@ -95,7 +102,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+4983267165"
-                  className="flex items-center gap-2.5 font-serif text-[14px] transition-colors hover:text-white"
+                  className="flex items-center gap-2.5 font-serif text-[15px] transition-colors hover:text-white"
                 >
                   <Phone className="h-4 w-4 text-white/30" />
                   08326 / 7165
@@ -104,7 +111,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+4915111700333"
-                  className="flex items-center gap-2.5 font-serif text-[14px] transition-colors hover:text-white"
+                  className="flex items-center gap-2.5 font-serif text-[15px] transition-colors hover:text-white"
                 >
                   <Smartphone className="h-4 w-4 text-white/30" />
                   0151 / 117 003 33
@@ -113,7 +120,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:post@gaestehaus-schmid.info"
-                  className="flex items-center gap-2.5 font-serif text-[14px] transition-colors hover:text-white break-all"
+                  className="flex items-center gap-2.5 font-serif text-[15px] transition-colors hover:text-white break-all"
                 >
                   <Mail className="h-4 w-4 text-white/30" />
                   post@gaestehaus-schmid.info
@@ -125,8 +132,8 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-5 text-[12px] text-white/30 sm:flex-row sm:px-8">
-          <p>&copy; {new Date().getFullYear()} Gaestehaus Schmid. Alle Rechte vorbehalten.</p>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-5 text-[13px] text-white/40 sm:flex-row sm:px-8">
+          <p>&copy; {new Date().getFullYear()} Gästehaus Schmid. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">
             <Link href="/impressum" className="transition-colors hover:text-white/60">
               Impressum
