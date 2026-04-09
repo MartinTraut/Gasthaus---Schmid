@@ -142,7 +142,7 @@ export const HERO_IMAGES = [
     alt: "Frühstück im Garten mit Bergblick",
   },
   {
-    src: `${STORAGE}/gaestehaus-schmid-20252/994593/600x400.jpg?r=1`,
+    src: `${STORAGE}/gaestehaus-schmid-20252/994593/1200.jpg?r=1`,
     alt: "Allgäuer Berglandschaft bei Obermaiselstein",
   },
 ]
@@ -167,18 +167,18 @@ export const GALLERY_IMAGES = {
     { src: `${STORAGE}/gaestehaus-schmid-20252/982285/1200.jpg`, alt: "Eingangsbereich" },
   ],
   umgebung: [
-    { src: `${STORAGE}/gaestehaus-schmid-20252/994593/600x400.jpg?r=1`, alt: "Blick Richtung Balderschwang" },
-    { src: `${STORAGE}/gaestehaus-schmid-20252/1130479/595x350.jpg`, alt: "Allgäuer Bergwelt" },
-    { src: `${STORAGE}/suedallgaeu/940884/400x300.jpg?r=1`, alt: "Bergblick Allgäu" },
-    { src: `${STORAGE}/suedallgaeu/998798/400x300.jpg`, alt: "Gaisberg Panorama" },
-    { src: `${STORAGE}/suedallgaeu/940870/567x319.jpg?r=1`, alt: "Gaisalpe Wanderweg" },
-    { src: `${STORAGE}/suedallgaeu/940865/300x225.jpg?r=1`, alt: "Tobelweg zur Gaisalpe" },
-    { src: `${STORAGE}/suedallgaeu/940867/300.jpg?r=1`, alt: "Blumenwiese Allgäu" },
-    { src: `${STORAGE}/suedallgaeu/944588/567x319.jpg?r=1`, alt: "Grünten mit Funkturm" },
-    { src: `${STORAGE}/suedallgaeu/944592/300.jpg?r=1`, alt: "Blick Richtung Kranzegg" },
-    { src: `${STORAGE}/suedallgaeu/944687/567x319.jpg?r=1`, alt: "Sonnenaufgang am Sonderdorfer Kreuz" },
-    { src: `${STORAGE}/gaestehaus-schmid-20252/994580/300.jpg?r=1`, alt: "Besler Gipfel" },
-    { src: `${STORAGE}/gaestehaus-schmid-20252/994591/300x225.jpg?r=1`, alt: "Auf dem Besler" },
+    { src: `${STORAGE}/gaestehaus-schmid-20252/994593/1200.jpg?r=1`, alt: "Blick Richtung Balderschwang" },
+    { src: `${STORAGE}/gaestehaus-schmid-20252/1130479/1200.jpg`, alt: "Allgäuer Bergwelt" },
+    { src: `${STORAGE}/suedallgaeu/940884/1200.jpg?r=1`, alt: "Bergblick Allgäu" },
+    { src: `${STORAGE}/suedallgaeu/998798/1200.jpg`, alt: "Gaisberg Panorama" },
+    { src: `${STORAGE}/suedallgaeu/940870/1200.jpg?r=1`, alt: "Gaisalpe Wanderweg" },
+    { src: `${STORAGE}/suedallgaeu/940865/1200.jpg?r=1`, alt: "Tobelweg zur Gaisalpe" },
+    { src: `${STORAGE}/suedallgaeu/940867/1200.jpg?r=1`, alt: "Blumenwiese Allgäu" },
+    { src: `${STORAGE}/suedallgaeu/944588/1200.jpg?r=1`, alt: "Grünten mit Funkturm" },
+    { src: `${STORAGE}/suedallgaeu/944592/1200.jpg?r=1`, alt: "Blick Richtung Kranzegg" },
+    { src: `${STORAGE}/suedallgaeu/944687/1200.jpg?r=1`, alt: "Sonnenaufgang am Sonderdorfer Kreuz" },
+    { src: `${STORAGE}/gaestehaus-schmid-20252/994580/1200.jpg?r=1`, alt: "Besler Gipfel" },
+    { src: `${STORAGE}/gaestehaus-schmid-20252/994591/1200.jpg?r=1`, alt: "Auf dem Besler" },
   ],
 }
 
@@ -300,7 +300,7 @@ export const WINTER_ACTIVITIES = [
   {
     title: "Skifahren",
     text: "Die Hörnerdörfer bieten Skivergnügen für Jung und Alt, Könner oder Anfänger.",
-    image: `${STORAGE}/gaestehaus-schmid-20252/1065542/400.webp`,
+    image: `${STORAGE}/gaestehaus-schmid-20252/1065542/1400.jpg`,
   },
 ]
 

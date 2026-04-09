@@ -13,10 +13,10 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="Gästehaus Schmid"
-                width={160}
-                height={54}
-                className="logo-sharp h-12 w-auto brightness-0 invert"
-                quality={90}
+                width={320}
+                height={107}
+                className="logo-sharp h-11 w-auto brightness-0 invert sm:h-12"
+                quality={100}
               />
             </Link>
             <p className="mt-5 font-serif text-base leading-relaxed text-white/70">

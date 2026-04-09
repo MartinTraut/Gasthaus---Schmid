@@ -49,7 +49,7 @@ export default function GaestehausPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <Image
-                src="https://storage.tramino.net/gaestehaus-schmid-20252/987420/567x319.jpg?r=1"
+                src="https://storage.tramino.net/gaestehaus-schmid-20252/987420/1200.jpg?r=1"
                 alt="Gästehaus Schmid Außenansicht"
                 width={600}
                 height={340}
@@ -120,7 +120,7 @@ export default function GaestehausPage() {
             </div>
             <div className="relative order-1 overflow-hidden rounded-2xl shadow-xl lg:order-2">
               <Image
-                src="https://storage.tramino.net/gaestehaus-schmid-20252/987421/400x300.jpg"
+                src="https://storage.tramino.net/gaestehaus-schmid-20252/987421/1200.jpg"
                 alt="Frühstücksraum mit gedecktem Tisch"
                 width={600}
                 height={450}

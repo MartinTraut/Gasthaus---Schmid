@@ -38,7 +38,7 @@ export default function ServicePage() {
             <Link href="/service/anfahrt" className="group block rounded-2xl border border-warm-100 bg-white shadow-md transition-shadow hover:shadow-lg overflow-hidden">
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
-                  src="https://storage.tramino.net/gaestehaus-schmid-20252/996674/450x253.jpg?r=1"
+                  src="https://storage.tramino.net/gaestehaus-schmid-20252/996674/1200.jpg?r=1"
                   alt="Lage und Anfahrt"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -60,7 +60,7 @@ export default function ServicePage() {
             <Link href="/kontakt" className="group block rounded-2xl border border-warm-100 bg-white shadow-md transition-shadow hover:shadow-lg overflow-hidden">
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
-                  src="https://storage.tramino.net/gaestehaus-schmid-20252/993331/450x253.jpg?r=1"
+                  src="https://storage.tramino.net/gaestehaus-schmid-20252/993331/1200.jpg?r=1"
                   alt="Kontakt"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

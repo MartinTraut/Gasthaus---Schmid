@@ -81,7 +81,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section
-        className="relative min-h-[500px] w-full overflow-hidden sm:min-h-[600px]"
+        className="relative min-h-[100svh] w-full overflow-hidden sm:min-h-[600px]"
         style={{ height: heroHeight, transform: "translate3d(0,0,0)" }}
       >
         {HERO_IMAGES.map((img, index) => (
@@ -108,35 +108,36 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-black/55" />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-24 text-center text-white">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 pt-20 pb-8 text-center text-white sm:px-6 sm:pt-24">
           <Image
             src="/logo.png"
             alt="Gästehaus Schmid"
-            width={280}
-            height={94}
-            className="logo-sharp mb-6 h-16 w-auto brightness-0 invert sm:h-20 md:h-24 animate-fade-in-up"
+            width={400}
+            height={134}
+            className="logo-sharp mb-3 h-8 w-auto brightness-0 invert sm:mb-4 sm:h-14 md:h-16 animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
             priority
+            quality={100}
           />
           <p
-            className="mb-4 font-serif text-base tracking-[0.2em] uppercase text-white sm:text-lg animate-fade-in-up"
+            className="mb-3 font-serif text-sm tracking-[0.18em] uppercase text-white/90 sm:mb-4 sm:text-base md:text-lg animate-fade-in-up"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.3s" }}
           >
             Urlaub in Obermaiselstein auf 859m Höhe
           </p>
 
           <h1
-            className="mb-6 max-w-4xl font-serif text-3xl leading-tight font-semibold sm:text-4xl md:text-5xl lg:text-6xl animate-fade-in-up"
+            className="mb-4 max-w-4xl font-serif text-[1.5rem] leading-tight font-semibold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl animate-fade-in-up"
             style={{ textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
           >
             Nicht daheim und doch{" "}
-            <span className="accent-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-alpine-200">
+            <span className="accent-script text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl text-alpine-200">
               zu Hause
             </span>
           </h1>
 
           <p
-            className="mb-10 max-w-2xl font-serif text-lg leading-relaxed text-white sm:text-xl animate-fade-in-up"
+            className="mb-6 max-w-2xl font-serif text-sm leading-relaxed text-white/90 sm:mb-10 sm:text-xl animate-fade-in-up"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.9s" }}
           >
             Lassen Sie in gemütlicher, herzlicher Atmosphäre den Alltag hinter sich
@@ -144,19 +145,19 @@ export default function HomePage() {
           </p>
 
           <div
-            className="flex flex-col gap-4 sm:flex-row animate-fade-in-up"
+            className="mb-16 flex w-full flex-col gap-3 px-2 sm:mb-20 sm:w-auto sm:flex-row sm:gap-4 sm:px-0 animate-fade-in-up"
             style={{ animationDelay: "1.2s" }}
           >
             <Link
               href="/zimmer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 font-serif text-base font-semibold text-alpine-800 shadow-md sm:px-10 sm:py-4 sm:text-lg"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 font-serif text-base font-bold text-alpine-800 shadow-md sm:px-10 sm:py-4 sm:text-lg"
             >
               Unsere Zimmer
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/kontakt"
-              className="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-alpine-700 px-6 py-3.5 font-serif text-base font-semibold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg sm:px-10 sm:py-4 sm:text-lg"
+              className="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-alpine-700 px-6 py-3.5 font-serif text-base font-bold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg sm:px-10 sm:py-4 sm:text-lg"
             >
               Anfrage senden
             </Link>
@@ -165,13 +166,13 @@ export default function HomePage() {
       </section>
 
       {/* Scroll-Pfeil */}
-      <div className="relative z-10 -mt-20 flex justify-center pb-6">
+      <div className="relative z-10 -mt-14 flex justify-center pb-6 sm:-mt-20">
         <a
           href="#ueber-uns"
           className="group flex flex-col items-center gap-1 animate-fade-in-up"
           style={{ animationDelay: "1.5s" }}
         >
-          <span className="font-serif text-sm font-semibold tracking-widest uppercase text-white/80 transition-colors duration-300 group-hover:text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
+          <span className="font-serif text-base font-extrabold tracking-widest uppercase text-white transition-colors duration-300 group-hover:text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
             Mehr entdecken
           </span>
           <ChevronDown className="h-6 w-6 text-white/80 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
@@ -229,17 +230,17 @@ export default function HomePage() {
               </FadeInSection>
 
               <FadeInSection delay={0.55}>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-2.5 sm:gap-4">
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="hover-glow rounded-xl bg-white p-4 text-center shadow-sm sm:p-6"
+                      className="hover-glow rounded-xl bg-white px-2 py-4 text-center shadow-sm sm:p-6"
                     >
-                      <stat.icon className="mx-auto mb-2 h-6 w-6 text-alpine-700 sm:h-7 sm:w-7" />
-                      <p className="font-serif text-xl font-bold text-warm-900 sm:text-2xl">
+                      <stat.icon className="mx-auto mb-2 h-5 w-5 text-alpine-700 sm:h-7 sm:w-7" />
+                      <p className="font-serif text-lg font-bold text-warm-900 sm:text-2xl">
                         {stat.value}
                       </p>
-                      <p className="font-serif text-sm text-warm-800 sm:text-base">
+                      <p className="font-serif text-xs text-warm-800 sm:text-base">
                         {stat.label}
                       </p>
                     </div>

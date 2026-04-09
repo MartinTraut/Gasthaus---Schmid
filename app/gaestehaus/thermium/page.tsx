@@ -44,7 +44,7 @@ export default function ThermiumPage() {
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl shadow-xl">
             <Image
-              src="https://storage.tramino.net/gaestehaus-schmid-20252/1022138/400x300.jpg"
+              src="https://storage.tramino.net/gaestehaus-schmid-20252/1022138/1200.jpg"
               alt="Thermium Wellnessbereich"
               width={900}
               height={500}

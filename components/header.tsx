@@ -128,11 +128,11 @@ export function Header() {
               <Image
                 src="/logo.png"
                 alt="Gästehaus Schmid"
-                width={180}
-                height={60}
-                className="logo-sharp h-10 w-auto sm:h-12"
+                width={360}
+                height={120}
+                className="logo-sharp h-auto w-36 sm:w-44 lg:w-48"
                 priority
-                quality={90}
+                quality={100}
               />
             </Link>
 
