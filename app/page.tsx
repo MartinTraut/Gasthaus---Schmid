@@ -136,15 +136,15 @@ export default function HomePage() {
               className="mb-4 font-serif text-xs font-semibold tracking-[0.25em] uppercase text-white/60 sm:text-sm lg:text-white/50 animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
-              Urlaub in Obermaiselstein auf 859m Höhe
+              Urlaub in Obermaiselstein<br />auf 859m Höhe
             </p>
 
             <h1
-              className="mb-5 font-serif text-[1.85rem] leading-tight font-bold text-white sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl animate-fade-in-up"
+              className="mb-5 font-serif text-[1.85rem] leading-tight font-bold text-white sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl animate-fade-in-up"
               style={{ textShadow: "0 2px 16px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
             >
               Nicht daheim und doch{" "}
-              <span className="accent-script text-[2.5rem] sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl text-alpine-200">
+              <span className="accent-script text-[2.5rem] sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl text-alpine-200">
                 zu Hause
               </span>
             </h1>
