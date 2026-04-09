@@ -25,13 +25,6 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 export default function ThermiumPage() {
   return (
     <main className="min-h-screen bg-warm-50 pt-44 pb-20">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Link href="/gaestehaus" className="mb-6 inline-flex items-center gap-2 font-serif text-lg text-alpine-700 hover:text-alpine-800">
-          <ArrowLeft className="h-5 w-5" />
-          Zurück zum Gästehaus
-        </Link>
-      </div>
-
       <FadeIn className="mx-auto mb-14 max-w-5xl px-4 text-center sm:px-6">
         <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">Wellness & Erholung</p>
         <h1 className="font-serif text-4xl font-bold text-warm-900 md:text-5xl">Thermium</h1>
@@ -98,6 +91,13 @@ export default function ThermiumPage() {
             className="inline-flex items-center gap-2 rounded-lg bg-alpine-700 px-8 py-3.5 font-serif text-lg font-semibold text-white shadow-md transition-all hover:bg-alpine-800"
           >
             Jetzt anfragen
+          </Link>
+        </FadeIn>
+
+        <FadeIn delay={0.4} className="mt-10 text-center">
+          <Link href="/gaestehaus" className="inline-flex items-center gap-2 font-serif text-lg font-semibold text-alpine-700 hover:text-alpine-800 transition-colors">
+            <ArrowLeft className="h-5 w-5" />
+            Zurück zum Gästehaus
           </Link>
         </FadeIn>
       </div>

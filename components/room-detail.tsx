@@ -124,11 +124,6 @@ export default function RoomDetail({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen bg-warm-50 pt-44 pb-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Link href="/zimmer" className="mb-6 inline-flex items-center gap-2 font-serif text-lg text-alpine-700 hover:text-alpine-800 transition-colors">
-          <ArrowLeft className="h-5 w-5" />
-          Zurück zur Übersicht
-        </Link>
-
         {/* Image Carousel */}
         <FadeIn>
           <ImageCarousel images={room.images} name={room.name} />

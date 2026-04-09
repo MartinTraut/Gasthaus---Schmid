@@ -273,7 +273,7 @@ export function Header() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="font-serif text-[24px] font-bold text-warm-900"
+                        className="font-serif text-xl font-bold text-warm-900"
                       >
                         {item.label}
                       </Link>
@@ -309,7 +309,7 @@ export function Header() {
                           key={child.href}
                           href={child.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block py-3 pl-5 font-serif text-[19px] ${
+                          className={`block py-3 pl-5 font-serif text-base ${
                             pathname === child.href
                               ? "font-bold text-alpine-700"
                               : "font-semibold text-warm-800/80"
@@ -325,7 +325,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block py-5 font-serif text-[24px] font-bold ${
+                    className={`block py-5 font-serif text-xl font-bold ${
                       pathname === item.href
                         ? "text-alpine-700"
                         : "text-warm-900"
@@ -342,7 +342,7 @@ export function Header() {
             <a
               href="tel:+4983267165"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-3 rounded-xl bg-alpine-700 py-4 font-serif text-[22px] font-bold text-white shadow-sm"
+              className="flex items-center justify-center gap-3 rounded-xl bg-alpine-700 py-4 font-serif text-lg font-bold text-white shadow-sm"
             >
               <Phone className="h-6 w-6" />
               08326 / 7165

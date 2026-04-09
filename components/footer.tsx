@@ -5,8 +5,8 @@ import { MapPin, Phone, Mail, Smartphone, CloudSun } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-alpine-900 text-white">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           {/* Logo + Beschreibung */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">

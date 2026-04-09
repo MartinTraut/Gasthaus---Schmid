@@ -174,7 +174,7 @@ export default function GaleriePage() {
           {/* Prev */}
           <button
             onClick={(e) => { e.stopPropagation(); goPrev() }}
-            className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:left-6 sm:p-4"
+            className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:left-6 sm:p-4"
             aria-label="Vorheriges Bild"
           >
             <ChevronLeft className="h-7 w-7 sm:h-8 sm:w-8" />
@@ -183,7 +183,7 @@ export default function GaleriePage() {
           {/* Next */}
           <button
             onClick={(e) => { e.stopPropagation(); goNext() }}
-            className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:right-6 sm:p-4"
+            className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:right-6 sm:p-4"
             aria-label="Nächstes Bild"
           >
             <ChevronRight className="h-7 w-7 sm:h-8 sm:w-8" />
@@ -191,7 +191,7 @@ export default function GaleriePage() {
 
           {/* Image Container – truly fullscreen */}
           <div
-            className="relative flex h-full w-full items-center justify-center px-14 py-20 sm:px-24 sm:py-24"
+            className="relative flex h-full w-full items-center justify-center px-4 py-16 sm:px-14 sm:py-20 lg:px-24 lg:py-24"
             onClick={(e) => e.stopPropagation()}
           >
             {isLoading && (

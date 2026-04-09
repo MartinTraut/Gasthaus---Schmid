@@ -105,8 +105,8 @@ function BuchenForm() {
       </FadeIn>
 
       <FadeIn delay={0.15} className="mx-auto max-w-2xl px-4 sm:px-6">
-        <div className="overflow-hidden rounded-2xl border border-warm-100 bg-white p-6 shadow-lg sm:p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="overflow-hidden rounded-2xl border border-warm-100 bg-white p-4 shadow-lg sm:p-6 md:p-8">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
             {/* Zimmerauswahl */}
             <div>
               <label

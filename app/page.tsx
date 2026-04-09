@@ -79,117 +79,123 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section – Split Layout */}
+      {/* Hero Section */}
       <section
-        className="relative min-h-[100svh] w-full overflow-hidden sm:min-h-[600px] lg:min-h-[700px]"
+        className="relative min-h-[100svh] w-full overflow-hidden lg:min-h-[700px]"
         style={{ height: heroHeight, transform: "translate3d(0,0,0)" }}
       >
-        <div className="flex h-full flex-col lg:flex-row">
-          {/* Linke Seite – Bilder */}
-          <div className="relative h-[45vh] w-full sm:h-[50vh] lg:h-full lg:w-1/2">
-            {HERO_IMAGES.map((img, index) => (
-              <div
-                key={img.src}
-                className="absolute inset-0"
-                style={{
-                  opacity: index === currentImage ? 1 : 0,
-                  transition: "opacity 2500ms ease-in-out",
-                  willChange: index === currentImage ? "opacity" : "auto",
-                }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  quality={95}
-                  priority={index === 0}
-                />
-              </div>
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-alpine-900/20" />
+        {/* Bilder – Mobile: Fullscreen-Hintergrund, Desktop: linke Hälfte */}
+        <div className="absolute inset-0 lg:relative lg:float-left lg:h-full lg:w-1/2">
+          {HERO_IMAGES.map((img, index) => (
+            <div
+              key={img.src}
+              className="absolute inset-0"
+              style={{
+                opacity: index === currentImage ? 1 : 0,
+                transition: "opacity 2500ms ease-in-out",
+                willChange: index === currentImage ? "opacity" : "auto",
+              }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                quality={100}
+                priority
+                unoptimized
+              />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-black/50 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-alpine-900/30" />
+        </div>
+
+        {/* Text – Mobile: über Bild zentriert, Desktop: rechte Hälfte */}
+        <div className="relative z-10 flex min-h-[100svh] flex-col lg:float-right lg:min-h-full lg:w-1/2 lg:bg-alpine-900">
+          {/* Desktop Hintergrund-Glow */}
+          <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block" aria-hidden="true">
+            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-alpine-700/10 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-alpine-800/15 blur-3xl" />
           </div>
 
-          {/* Rechte Seite – Text & CTAs */}
-          <div className="relative flex flex-1 flex-col bg-alpine-900 lg:w-1/2">
-            {/* Dezentes Hintergrund-Element */}
-            <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-              <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-alpine-700/10 blur-3xl" />
-              <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-alpine-800/15 blur-3xl" />
+          {/* Zentrierter Content */}
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-14 text-center sm:px-10 lg:px-14 xl:px-20">
+            <Image
+              src="/logo.png"
+              alt="Gästehaus Schmid"
+              width={400}
+              height={134}
+              className="logo-sharp mb-6 h-9 w-auto brightness-0 invert sm:h-11 md:h-14 animate-fade-in-up"
+              style={{ animationDelay: "0.1s" }}
+              priority
+              quality={100}
+            />
+
+            <p
+              className="mb-4 font-serif text-xs font-semibold tracking-[0.25em] uppercase text-white/60 sm:text-sm lg:text-white/50 animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              Urlaub in Obermaiselstein auf 859m Höhe
+            </p>
+
+            <h1
+              className="mb-5 font-serif text-[1.85rem] leading-tight font-bold text-white sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl animate-fade-in-up"
+              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
+            >
+              Nicht daheim und doch{" "}
+              <span className="accent-script text-[2.5rem] sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl text-alpine-200">
+                zu Hause
+              </span>
+            </h1>
+
+            <p
+              className="mb-8 max-w-sm font-serif text-sm font-medium leading-relaxed text-white/70 sm:text-base lg:text-white/55 lg:mb-10 animate-fade-in-up"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)", animationDelay: "0.9s" }}
+            >
+              Lassen Sie den Alltag hinter sich und genießen Sie
+              erholsame Tage im wunderschönen Allgäu.
+            </p>
+
+            <div
+              className="flex w-full flex-row gap-3 sm:w-auto sm:gap-4 animate-fade-in-up"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <Link
+                href="/zimmer"
+                className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 font-serif text-[15px] font-extrabold text-alpine-800 shadow-lg transition-all hover:shadow-xl sm:flex-none sm:px-9 sm:py-4 sm:text-lg"
+              >
+                Unsere Zimmer
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
+              </Link>
+              <Link
+                href="/kontakt"
+                className="btn-shine inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-alpine-700 px-5 py-3.5 font-serif text-[15px] font-extrabold text-white shadow-lg transition-all duration-300 hover:bg-alpine-800 sm:flex-none sm:px-9 sm:py-4 sm:text-lg"
+              >
+                Anfrage senden
+              </Link>
             </div>
 
-            <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-8 text-center sm:px-10 sm:py-12 lg:px-12 xl:px-20">
-              <Image
-                src="/logo.png"
-                alt="Gästehaus Schmid"
-                width={400}
-                height={134}
-                className="logo-sharp mb-5 h-10 w-auto brightness-0 invert sm:h-12 md:h-14 animate-fade-in-up"
-                style={{ animationDelay: "0.1s" }}
-                priority
-                quality={100}
-              />
+          </div>
 
-              <p
-                className="mb-3 font-serif text-[11px] tracking-[0.2em] uppercase text-white/50 sm:text-xs md:text-sm animate-fade-in-up"
-                style={{ animationDelay: "0.3s" }}
-              >
-                Urlaub in Obermaiselstein auf 859m Höhe
-              </p>
-
-              <h1
-                className="mb-4 whitespace-nowrap font-serif text-[1.35rem] leading-snug font-semibold text-white sm:text-2xl md:text-3xl lg:text-4xl animate-fade-in-up"
-                style={{ animationDelay: "0.6s" }}
-              >
-                Nicht daheim und doch <span className="accent-script text-[1.5rem] sm:text-3xl md:text-4xl lg:text-5xl text-alpine-200">zu Hause</span>
-              </h1>
-
-              <p
-                className="mb-6 max-w-sm font-serif text-xs leading-relaxed text-white/55 sm:text-sm md:text-base lg:mb-8 animate-fade-in-up"
-                style={{ animationDelay: "0.9s" }}
-              >
-                Lassen Sie den Alltag hinter sich und genießen Sie
-                erholsame Tage im wunderschönen Allgäu.
-              </p>
-
-              <div
-                className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4 animate-fade-in-up"
-                style={{ animationDelay: "1.2s" }}
-              >
-                <Link
-                  href="/zimmer"
-                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3 font-serif text-sm font-bold text-alpine-800 shadow-md transition-all hover:shadow-lg sm:px-8 sm:py-3.5 sm:text-base"
-                >
-                  Unsere Zimmer
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/kontakt"
-                  className="btn-shine inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-white/10 px-6 py-3 font-serif text-sm font-bold text-white shadow-md backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:shadow-lg sm:px-8 sm:py-3.5 sm:text-base"
-                >
-                  Anfrage senden
-                </Link>
-              </div>
-
-              {/* Mehr entdecken */}
-              <a
-                href="#ueber-uns"
-                className="group mt-8 flex flex-col items-center gap-1 animate-fade-in-up lg:mt-10"
-                style={{ animationDelay: "1.5s" }}
-              >
-                <span className="font-serif text-xs font-bold tracking-[0.2em] uppercase text-white/50 transition-colors duration-300 group-hover:text-white">
-                  Mehr entdecken
-                </span>
-                <ArrowDown className="h-4 w-4 text-white/50 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
-              </a>
-            </div>
+          {/* Mehr entdecken – fixiert unten */}
+          <div className="relative z-10 flex justify-center pb-6 lg:pb-8">
+            <a
+              href="#ueber-uns"
+              className="group flex flex-col items-center gap-1.5 animate-fade-in-up"
+              style={{ animationDelay: "1.5s" }}
+            >
+              <span className="font-serif text-sm font-extrabold tracking-[0.25em] uppercase text-white/50 transition-colors duration-300 group-hover:text-white">
+                Mehr entdecken
+              </span>
+              <ArrowDown className="h-5 w-5 text-white/50 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
+            </a>
           </div>
         </div>
       </section>
 
       {/* Über uns Section */}
-      <section id="ueber-uns" className="bg-warm-50 py-20 sm:py-28">
+      <section id="ueber-uns" className="bg-warm-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeInSection>
@@ -262,7 +268,7 @@ export default function HomePage() {
       </section>
 
       {/* USPs / Vorteile Section */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeInSection className="mb-10 text-center">
             <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">
@@ -291,7 +297,7 @@ export default function HomePage() {
       </section>
 
       {/* Frühstück Section */}
-      <section className="bg-warm-50 py-20 sm:py-28">
+      <section className="bg-warm-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
@@ -332,7 +338,7 @@ export default function HomePage() {
       </section>
 
       {/* Zimmer Preview Section */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeInSection className="mb-14 text-center">
             <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">
@@ -401,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* Kontakt Section */}
-      <section className="bg-warm-100 py-20 sm:py-28">
+      <section className="bg-warm-100 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeInSection className="text-center">
             <p className="accent-script mb-2 text-2xl text-alpine-700 sm:text-3xl">
