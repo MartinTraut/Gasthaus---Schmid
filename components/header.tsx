@@ -100,9 +100,11 @@ export function Header() {
     }, 150)
   }, [])
 
+  const headerHidden = isHome && !isScrolled
+
   const headerBg = isScrolled || !isHome
     ? "bg-white/98 backdrop-blur-md shadow-md"
-    : "bg-gradient-to-b from-black/60 via-black/30 to-transparent"
+    : "bg-transparent"
 
   const navTextColor = isScrolled || !isHome
     ? "text-warm-900 hover:text-alpine-700"
@@ -115,15 +117,15 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg} ${
+          headerHidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
+        }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-1.5">
             <Link
               href="/"
-              className={`shrink-0 py-1 transition-all duration-500 ${
-                isHome && !isScrolled ? "pointer-events-none opacity-0" : "opacity-100"
-              }`}
+              className="shrink-0 py-1"
             >
               <Image
                 src="/logo.png"

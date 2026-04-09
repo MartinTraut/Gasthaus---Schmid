@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Phone, Mail, MapPin, ArrowRight, Mountain, Home, Users, ChevronDown, Coffee, Sparkles, BusFront } from "lucide-react"
+import { Phone, Mail, MapPin, ArrowRight, ArrowDown, Mountain, Home, Users, ChevronDown, Coffee, Sparkles, BusFront } from "lucide-react"
 import { HERO_IMAGES, ROOMS } from "@/lib/data"
 
 function FadeInSection({
@@ -79,105 +79,114 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section – Split Layout */}
       <section
-        className="relative min-h-[100svh] w-full overflow-hidden sm:min-h-[600px]"
+        className="relative min-h-[100svh] w-full overflow-hidden sm:min-h-[600px] lg:min-h-[700px]"
         style={{ height: heroHeight, transform: "translate3d(0,0,0)" }}
       >
-        {HERO_IMAGES.map((img, index) => (
-          <div
-            key={img.src}
-            className="absolute inset-0"
-            style={{
-              opacity: index === currentImage ? 1 : 0,
-              transition: "opacity 2500ms ease-in-out",
-              willChange: index === currentImage ? "opacity" : "auto",
-            }}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              quality={90}
-              priority={index === 0}
-            />
+        <div className="flex h-full flex-col lg:flex-row">
+          {/* Linke Seite – Bilder */}
+          <div className="relative h-[45vh] w-full sm:h-[50vh] lg:h-full lg:w-1/2">
+            {HERO_IMAGES.map((img, index) => (
+              <div
+                key={img.src}
+                className="absolute inset-0"
+                style={{
+                  opacity: index === currentImage ? 1 : 0,
+                  transition: "opacity 2500ms ease-in-out",
+                  willChange: index === currentImage ? "opacity" : "auto",
+                }}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                  quality={95}
+                  priority={index === 0}
+                />
+              </div>
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-alpine-900/20" />
           </div>
-        ))}
 
-        <div className="absolute inset-0 bg-black/55" />
+          {/* Rechte Seite – Text & CTAs */}
+          <div className="relative flex flex-1 flex-col bg-alpine-900 lg:w-1/2">
+            {/* Dezentes Hintergrund-Element */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+              <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-alpine-700/10 blur-3xl" />
+              <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-alpine-800/15 blur-3xl" />
+            </div>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 pt-20 pb-8 text-center text-white sm:px-6 sm:pt-24">
-          <Image
-            src="/logo.png"
-            alt="Gästehaus Schmid"
-            width={400}
-            height={134}
-            className="logo-sharp mb-3 h-8 w-auto brightness-0 invert sm:mb-4 sm:h-14 md:h-16 animate-fade-in-up"
-            style={{ animationDelay: "0.1s" }}
-            priority
-            quality={100}
-          />
-          <p
-            className="mb-3 font-serif text-sm tracking-[0.18em] uppercase text-white/90 sm:mb-4 sm:text-base md:text-lg animate-fade-in-up"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.3s" }}
-          >
-            Urlaub in Obermaiselstein auf 859m Höhe
-          </p>
+            <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-8 text-center sm:px-10 sm:py-12 lg:px-12 xl:px-20">
+              <Image
+                src="/logo.png"
+                alt="Gästehaus Schmid"
+                width={400}
+                height={134}
+                className="logo-sharp mb-5 h-10 w-auto brightness-0 invert sm:h-12 md:h-14 animate-fade-in-up"
+                style={{ animationDelay: "0.1s" }}
+                priority
+                quality={100}
+              />
 
-          <h1
-            className="mb-4 max-w-4xl font-serif text-[1.5rem] leading-tight font-semibold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl animate-fade-in-up"
-            style={{ textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)", animationDelay: "0.6s" }}
-          >
-            Nicht daheim und doch{" "}
-            <span className="accent-script text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl text-alpine-200">
-              zu Hause
-            </span>
-          </h1>
+              <p
+                className="mb-3 font-serif text-[11px] tracking-[0.2em] uppercase text-white/50 sm:text-xs md:text-sm animate-fade-in-up"
+                style={{ animationDelay: "0.3s" }}
+              >
+                Urlaub in Obermaiselstein auf 859m Höhe
+              </p>
 
-          <p
-            className="mb-6 max-w-2xl font-serif text-sm leading-relaxed text-white/90 sm:mb-10 sm:text-xl animate-fade-in-up"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)", animationDelay: "0.9s" }}
-          >
-            Lassen Sie in gemütlicher, herzlicher Atmosphäre den Alltag hinter sich
-            und genießen Sie erholsame Tage im wunderschönen Allgäu.
-          </p>
+              <h1
+                className="mb-4 whitespace-nowrap font-serif text-[1.35rem] leading-snug font-semibold text-white sm:text-2xl md:text-3xl lg:text-4xl animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
+                Nicht daheim und doch <span className="accent-script text-[1.5rem] sm:text-3xl md:text-4xl lg:text-5xl text-alpine-200">zu Hause</span>
+              </h1>
 
-          <div
-            className="mb-16 flex w-full flex-col gap-3 px-2 sm:mb-20 sm:w-auto sm:flex-row sm:gap-4 sm:px-0 animate-fade-in-up"
-            style={{ animationDelay: "1.2s" }}
-          >
-            <Link
-              href="/zimmer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 font-serif text-base font-bold text-alpine-800 shadow-md sm:px-10 sm:py-4 sm:text-lg"
-            >
-              Unsere Zimmer
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/kontakt"
-              className="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-alpine-700 px-6 py-3.5 font-serif text-base font-bold text-white shadow-md transition-all duration-300 hover:bg-alpine-800 hover:shadow-lg sm:px-10 sm:py-4 sm:text-lg"
-            >
-              Anfrage senden
-            </Link>
+              <p
+                className="mb-6 max-w-sm font-serif text-xs leading-relaxed text-white/55 sm:text-sm md:text-base lg:mb-8 animate-fade-in-up"
+                style={{ animationDelay: "0.9s" }}
+              >
+                Lassen Sie den Alltag hinter sich und genießen Sie
+                erholsame Tage im wunderschönen Allgäu.
+              </p>
+
+              <div
+                className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4 animate-fade-in-up"
+                style={{ animationDelay: "1.2s" }}
+              >
+                <Link
+                  href="/zimmer"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3 font-serif text-sm font-bold text-alpine-800 shadow-md transition-all hover:shadow-lg sm:px-8 sm:py-3.5 sm:text-base"
+                >
+                  Unsere Zimmer
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/kontakt"
+                  className="btn-shine inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-white/10 px-6 py-3 font-serif text-sm font-bold text-white shadow-md backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:shadow-lg sm:px-8 sm:py-3.5 sm:text-base"
+                >
+                  Anfrage senden
+                </Link>
+              </div>
+
+              {/* Mehr entdecken */}
+              <a
+                href="#ueber-uns"
+                className="group mt-8 flex flex-col items-center gap-1 animate-fade-in-up lg:mt-10"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <span className="font-serif text-xs font-bold tracking-[0.2em] uppercase text-white/50 transition-colors duration-300 group-hover:text-white">
+                  Mehr entdecken
+                </span>
+                <ArrowDown className="h-4 w-4 text-white/50 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Scroll-Pfeil */}
-      <div className="relative z-10 -mt-14 flex justify-center pb-6 sm:-mt-20">
-        <a
-          href="#ueber-uns"
-          className="group flex flex-col items-center gap-1 animate-fade-in-up"
-          style={{ animationDelay: "1.5s" }}
-        >
-          <span className="font-serif text-base font-extrabold tracking-widest uppercase text-white transition-colors duration-300 group-hover:text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-            Mehr entdecken
-          </span>
-          <ChevronDown className="h-6 w-6 text-white/80 animate-pulse-arrow transition-colors duration-300 group-hover:text-white" />
-        </a>
-      </div>
 
       {/* Über uns Section */}
       <section id="ueber-uns" className="bg-warm-50 py-20 sm:py-28">
