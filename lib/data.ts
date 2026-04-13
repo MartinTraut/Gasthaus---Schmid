@@ -168,7 +168,6 @@ export const GALLERY_IMAGES = {
   ],
   umgebung: [
     { src: `${STORAGE}/gaestehaus-schmid-20252/994593/1200.jpg?r=1`, alt: "Blick Richtung Balderschwang" },
-    { src: `${STORAGE}/gaestehaus-schmid-20252/1130479/1200.jpg`, alt: "Allgäuer Bergwelt" },
     { src: `${STORAGE}/suedallgaeu/940884/1200.jpg?r=1`, alt: "Bergblick Allgäu" },
     { src: `${STORAGE}/suedallgaeu/998798/1200.jpg`, alt: "Gaisberg Panorama" },
     { src: `${STORAGE}/suedallgaeu/940870/1200.jpg?r=1`, alt: "Gaisalpe Wanderweg" },
